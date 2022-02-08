@@ -1,0 +1,17 @@
+.Menu {
+    min-height: 55px;
+    height: 10%;
+    bottom: 0px;
+    position: fixed;
+    box-shadow: 4px 25%;
+}
+
+.Menu > * {
+    display: inline-block;
+    padding: 5px;
+    width: 20%; 
+}
+
+img {
+    width: 100%;
+}

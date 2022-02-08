@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Main from './main/Main.js';
+import MenuBar from './component/MenuBar.js';
+import Main from './pages/main/Main.js';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Main />
+    {/* <MenuBar /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import MenuBar from './component/MenuBar.js';
 import Main from './pages/main/Main.js';
 import reportWebVitals from './reportWebVitals';
@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <Main />
-    {/* <MenuBar /> */}
+    <MenuBar />
   </React.StrictMode>,
   document.getElementById('root')
 );

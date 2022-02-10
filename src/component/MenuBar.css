@@ -3,15 +3,19 @@
     height: 10%;
     bottom: 0px;
     position: fixed;
-    box-shadow: 4px 25%;
+    display: flex;
+    box-shadow: 0 -15px 15px lightgray;
 }
 
-.Menu > * {
+.Menu > div {
     display: inline-block;
+    margin: auto;
     padding: 5px;
     width: 20%; 
+    text-align: center;
 }
 
 img {
-    width: 100%;
+    padding: 5%;
+    width: 70%;
 }

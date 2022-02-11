@@ -1,0 +1,36 @@
+.ListItem-area {
+    margin-right: 10px;
+    width:100px; 
+    /* height:140px;  */
+}
+
+.ListItem-image {
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: 0 0 4px 4px #EEEEEE;
+    border-radius: 5px;
+}
+
+.ListItem-name {
+    font-weight: 700;
+    font-size: 12pt;
+}
+
+.ListItem-foot {
+    font-weight: 400;
+    font-size: 9pt;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ListItem-star  > * {
+    display: inline;
+    font-weight: 400; 
+}
+
+
+.star {
+    width: 30%;
+    margin-right: 5px;
+}

@@ -1,12 +1,49 @@
-.Main > * {
-    margin: 25px;
+.Main {
+    margin-bottom: 25px;
+    padding-bottom: 55px;
 }
 
-h4, h1 {
-    font-family: 'Noto Sans KR', sans-serif;
+.Main > * {
+    /* margin: 25px 0 15px 25px; */
+}
+
+.Alarm-icon-area {
+    margin: 25px 25px 0 25px;
+    text-align: right;
+}
+
+.Alarm-icon-area > img {
+    width: 10%;
+}
+
+.Header {
+    margin-left: 25px;
     font-weight: 700;
+    font-size: 15pt;
+    margin-bottom: 25px;   
 }
 
 .FontOrange {
     color: #FB974B;
+    font-size: 18pt;
+    font-weight: 800;
+}
+
+.Body > div {
+    
+    margin-left: 25px;
+    font-size: 12pt;
+    font-weight: 700;
+    margin-bottom: 10px;   
+}
+
+.Best-area > div, .Location-area > div, .Review-area > div {
+    padding: 0 0 15px 0;
+}
+
+.Map {
+    margin-right: 25px;
+}
+.Map > img {
+    width: 100%;
 }

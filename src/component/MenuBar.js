@@ -11,11 +11,11 @@ import etc from "../image/etc.png";
 function Menu() {
   return (
     <div className="Menu">
-      <div><img src={main} alt="Main" /></div>
-      <div><img src={search} alt="Search" /></div>
-      <div><img src={mywait} alt="My-Wait" /></div>
-      <div><img src={liked} alt="Liked" /></div>
-      <div><img src={etc} alt="Etc" /></div>
+      <div><img src={main} className="Menu-icon" alt="Main" /></div>
+      <div><img src={search} className="Menu-icon" alt="Search" /></div>
+      <div><img src={mywait} className="Menu-icon" alt="My-Wait" /></div>
+      <div><img src={liked} className="Menu-icon" alt="Liked" /></div>
+      <div><img src={etc} className="Menu-icon" alt="Etc" /></div>
     </div>
   );
 }

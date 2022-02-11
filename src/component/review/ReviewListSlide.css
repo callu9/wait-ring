@@ -1,0 +1,10 @@
+
+.Review-slide-area {
+    padding: 5px;
+    overflow-x: auto;
+    white-space: nowrap; 
+}
+
+.Review-slide-area > * {
+    display: inline-block;
+}

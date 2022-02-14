@@ -1,10 +1,13 @@
-import './Main.css';
-import notice from "../../image/notice-none.png"
-import map from "../../image/location-logout.png"
-import ListSlide from '../../component/list/ListSlide.js'
-import ReviewListSlide from '../../component/review/ReviewListSlide.js'
+import React from "react";
+import "./Main.css";
+import notice from "../../image/notice-none.png";
+import map from "../../image/location-logout.png";
+import ListSlide from "../../component/list/ListSlide.js";
+import ReviewListSlide from "../../component/review/ReviewListSlide.js";
 
-function Main() {
+import storage from "../../storage.js";
+
+function Main(props) {
   return (
     <div className="Main">
       <div className="Alarm">
@@ -14,13 +17,13 @@ function Main() {
       </div>
       <div className="Header">
         <div>쉽고 빠른 원격 웨이팅,</div>
-        <div className='FontOrange'>웨이링</div>
+        <div className="FontOrange">웨이링</div>
       </div>
       <div className="Body">
         <div className="Best-area">
           <div>인기 웨이팅 맛집</div>
           <div className="Item-list-slide">
-            <ListSlide />
+            <ListSlide data={storage.storeData} />
           </div>
         </div>
         <div className="Location-area">
@@ -32,7 +35,7 @@ function Main() {
         <div className="Review-area">
           <div>최근 작성된 리뷰</div>
           <div className="Review-list-slide">
-            <ReviewListSlide />
+            <ReviewListSlide data={storage.reviewData} />
           </div>
         </div>
       </div>

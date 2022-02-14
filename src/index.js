@@ -1,15 +1,18 @@
 import React from 'react';
+import { BrowserRouter } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import MenuBar from './component/MenuBar.js';
-import Main from './pages/main/Main.js';
+import MenuBar from './component/MenuBar';
+import Main from './pages/main/Main';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Main />
-    <MenuBar />
+    <BrowserRouter>
+      <MenuBar />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

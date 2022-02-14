@@ -1,3 +1,10 @@
+# 웨이링 (Wait-Ring)
+원격 웨이팅 서비스로, 각 매장에 웨이팅/예약 신청을 위한 사이트입니다.
+- [화면설계](https://www.figma.com/file/AsbTomoY56L7CQqMFpSG2k/WaitRing?node-id=0%3A1)
+- DB설계
+- firebase
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,25 +1,36 @@
+import React from "react";
 import "./ReviewSlideItem.css";
 import star from "../../image/star.png";
 
-function ReviewSlideItem() {
-  return (
-    <div className="Review-Item">
+function makeNameShort(name) {
+  return name.substring(0, 6)+"...";
+};
+
+function makeContentShort(content) {
+  return content.substring(0, 25)+"...";
+};
+
+const ReviewSlideItem = ({name, areaDong, review, reviewContent, nickname}) => (
+  <>
+    <div className="Review-Item" >
       <div className="Item-header">
-        <div className="Item-header-name">맛집 이름</div>
+        <div className="Item-header-name">{makeNameShort(name)}</div>
         <div className="Item-header-star">
-          <div><img src={star} className="star" alt="star" /></div>
-          <div>5.0</div>
+          <div>
+            <img src={star} className="star" alt="star" />
+          </div>
+          <div>{review}</div>
         </div>
       </div>
       <div className="Item-body">
-        <div className="Item-area">OO동</div>
+        <div className="Item-area">{areaDong}</div>
         <div className="Item-content">
-          <p>리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다... </p>
+          <p>{makeContentShort(reviewContent)}</p>
         </div>
       </div>
-      <div className="Item-nickname">닉네임</div>
+      <div className="Item-nickname">{nickname}</div>
     </div>
+  </>
   );
-}
 
 export default ReviewSlideItem;

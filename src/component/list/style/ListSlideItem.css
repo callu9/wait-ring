@@ -1,0 +1,46 @@
+.ListItem-area {
+  margin-right: 15px;
+  width: 100px;
+  /* height:140px;  */
+}
+
+.ListItem-image-area-100 {
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 5px 2px #CECECE;
+}
+
+
+.ListItem-image-1x1 {
+  display: inline-block; /* Otherwise it keeps some space around baseline */
+  min-width: 100%;
+  height: 100%; 
+}
+
+.ListItem-name {
+  font-weight: 700;
+  font-size: 12pt;
+}
+
+.ListItem-foot {
+  font-weight: 400;
+  font-size: 9pt;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ListItem-star > * {
+  display: inline;
+  font-weight: 400;
+}
+
+.star {
+  width: 30%;
+  margin-right: 5px;
+}

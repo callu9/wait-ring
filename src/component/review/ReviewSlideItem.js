@@ -1,5 +1,5 @@
 import React from "react";
-import "./ReviewSlideItem.css";
+import "./Review.scss";
 import star from "../../image/star.png";
 
 function makeNameShort(name) {

@@ -8,7 +8,7 @@
 }
 
 .Alarm-icon-area {
-    margin: 25px 25px 0 25px;
+    margin: 27px 25px 0 25px;
     text-align: right;
 }
 
@@ -16,7 +16,7 @@
     width: 10%;
 }
 
-.Header {
+.Header-main {
     margin-left: 25px;
     font-weight: 700;
     font-size: 15pt;

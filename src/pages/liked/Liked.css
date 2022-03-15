@@ -1,0 +1,19 @@
+.Liked {
+    margin-top: 52px;
+    margin-bottom: 25px;
+    padding-bottom: 55px;
+}
+
+.Header {
+    margin-left: 25px;
+    font-weight: 700;
+    font-size: 15pt;
+    margin-bottom: 25px;   
+}
+
+.FontSmall {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 9pt;
+    color: #8C8C8C;
+}

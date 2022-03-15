@@ -7,7 +7,7 @@ import ReviewListSlide from "../../component/review/ReviewListSlide.js";
 
 import storage from "../../storage.js";
 
-function Main(props) {
+const Main = (props) => {
   return (
     <div className="Main">
       <div className="Alarm">
@@ -15,7 +15,7 @@ function Main(props) {
           <img src={notice} alt="Notice" />
         </p>
       </div>
-      <div className="Header">
+      <div className="Header-main">
         <div>쉽고 빠른 원격 웨이팅,</div>
         <div className="FontOrange">웨이링</div>
       </div>

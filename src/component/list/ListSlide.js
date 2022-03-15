@@ -1,5 +1,5 @@
 import React from "react";
-import "./ListSlide.css";
+import "./List.scss";
 import SlideItem from "./ListSlideItem.js";
 
 const Slide = ({ data = [] }) => (

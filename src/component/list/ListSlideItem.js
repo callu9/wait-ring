@@ -1,25 +1,27 @@
 import React from "react";
-import "./ListSlideItem.css";
+import "./List.scss";
 
 import star from "../../image/star.png";
 
 function makeNameShort(name) {
-  return name.substring(0, 5)+"...";
-};
+  return name.substring(0, 5) + "...";
+}
 
-const ListSlideItem = ({name, imageUrl, areaDong, review}) => (
+const ListSlideItem = ({ name, imageUrl, areaDong, review }) => (
   <>
-      <div className="ListItem-area">
-        <img src={imageUrl} className="ListItem-image" alt="temp" />
-        <div className="ListItem-name">{makeNameShort(name)}</div>
-        <div className="ListItem-foot">
-          <div className="ListItem-area">{areaDong}</div>
-          <div className="ListItem-star">
-            <img src={star} className="star" alt="star" />
-            <p>{review}</p>
-          </div>
+    <div className="ListItem-area">
+      <div className="ListItem-image-area-100">
+        <img src={imageUrl} className="ListItem-image-1x1" alt="store-img" />
+      </div>
+      <div className="ListItem-name">{makeNameShort(name)}</div>
+      <div className="ListItem-foot">
+        <div className="ListItem-area">{areaDong}</div>
+        <div className="ListItem-star">
+          <img src={star} className="star" alt="star" />
+          <p>{review}</p>
         </div>
       </div>
+    </div>
   </>
 );
 

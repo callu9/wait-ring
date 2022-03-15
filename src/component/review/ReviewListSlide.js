@@ -1,5 +1,5 @@
 import React from "react";
-import "./ReviewListSlide.css";
+import "./Review.scss";
 import ReviewSlideItem from "./ReviewSlideItem.js";
 
 const ReviewListSlide = ({ data = [] }) => (

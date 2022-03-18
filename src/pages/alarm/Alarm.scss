@@ -1,0 +1,50 @@
+@import "../../style.scss";
+
+.Alarm {
+    margin: 0 25px 0 25px;
+}
+
+.Header {
+    font-weight: $header-large-font-weight;
+    font-size: $header-large-font-size;
+    margin: 52px 0 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border-top: 1px solid $lightGrayColor;
+    border-bottom: 1px solid $lightGrayColor;
+}
+
+.Alarm-List-Item > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Alarm-List-Item-img {
+    width: 50px;
+    margin: 12px 25px 12px 0;
+}
+
+.Alarm-List-Item-img > img {
+    width: 100%;
+}
+
+.Alarm-List-Item-body {
+    justify-self: center;
+}
+
+.Alarm-List-Item-content {
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+.Alarm-List-Item-foot {
+    font-size: $header-small-font-size;
+    font-weight: $header-small-font-weight;
+    color: $grayColor;
+}

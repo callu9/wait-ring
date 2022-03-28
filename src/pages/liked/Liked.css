@@ -1,11 +1,9 @@
 .Liked {
-    margin-top: 52px;
-    margin-bottom: 25px;
+    margin: 25px 0 25px 25px;
     padding-bottom: 55px;
 }
 
 .Header {
-    margin-left: 25px;
     font-weight: 700;
     font-size: 15pt;
     margin-bottom: 25px;   

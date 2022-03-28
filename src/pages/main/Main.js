@@ -1,5 +1,9 @@
 import React from "react";
+import { Outlet, Link } from "react-router-dom";
+
 import "./Main.css";
+import Alarm from "../alarm/Alarm";
+
 import notice from "../../image/notice-none.png";
 import map from "../../image/location-logout.png";
 import ListSlide from "../../component/list/ListSlide.js";
@@ -12,7 +16,9 @@ const Main = (props) => {
     <div className="Main">
       <div className="Alarm">
         <p className="Alarm-icon-area">
-          <img src={notice} alt="Notice" />
+          <Link to="/alarm">
+            <img src={notice} alt="Notice" />
+          </Link>
         </p>
       </div>
       <div className="Header-main">
@@ -39,8 +45,9 @@ const Main = (props) => {
           </div>
         </div>
       </div>
+      {/* <Outlet /> */}
     </div>
   );
-}
+};
 
 export default Main;

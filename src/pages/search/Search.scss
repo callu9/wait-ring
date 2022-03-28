@@ -1,0 +1,51 @@
+@import "../../style.scss";
+
+.Search {
+    margin: 0 25px  25px;
+}
+
+.Search-area {
+    background-color: $lightGrayColor;
+    border-radius: 20px;
+    color: $grayColor;
+    height: 40px;
+    
+}
+
+.Search-area > * {
+    display: inline-block;
+    position: relative;
+}
+
+.Search-Icon {
+    width: 20px;
+    margin: 5px;
+}
+
+.SmallHeader {
+    font-weight: $header-large-font-weight;
+    font-size: 12pt;
+    margin: 32px 0 10px 0;
+}
+
+.Best-List-Item > * {
+    display: inline-block;
+    margin: 15px;
+}
+
+.firstNum {
+    color: $orangeColor;
+    font-weight: $header-large-font-weight;
+}
+.secondNum {
+    color: $lightOrangeColor;
+    font-weight: $header-large-font-weight;
+}
+.thirdNum {
+    color: $lightGrayColor;
+    font-weight: $header-large-font-weight;
+}
+
+.Recommend-List-area > * {
+    display: inline-block;
+}

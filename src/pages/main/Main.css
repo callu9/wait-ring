@@ -1,5 +1,5 @@
 .Main {
-    margin-bottom: 25px;
+    margin: 25px 0 25px 0;
     padding-bottom: 55px;
 }
 
@@ -7,16 +7,12 @@
     margin: 15px 25px 0 25px;
 }
 
-.Alarm {
-    margin-top: 25px;
-}
-
 .Alarm-icon-area {
     text-align: right;
     /* margin: 27px 25px 0 25px; */
 }
 
-.Alarm-icon-area > img {
+.Alarm-icon-area img {
     max-width: 55px;
     width: 10%;
 }

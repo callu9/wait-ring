@@ -1,28 +1,25 @@
 @import "../../style.scss";
 
-.List-area {
-  margin-left: 15px;
-}
-
 .ListItem-area {
   margin-right: 15px;
   display: inline-block;
 }
 
 .keyword {
-  margin: 5px 5px 5px 0;
+  margin: 5px 10px 10px 0;
   padding: 3px;
   min-width: 40px;
   min-height: 15px;
   border-radius: 5px;
   background-color: $lightOrangeColor;
-  font-size: 9pt;
+  font-size: 10pt;
   font-weight: 600;
   color: white;
   display: inline-block;
 }
 
 .ListItem-image-area {
+  margin-top: 15px;
   position: relative;
   display: block;
   overflow: hidden;

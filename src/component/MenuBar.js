@@ -1,6 +1,6 @@
 import "./MenuBar.css";
 import React from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import main from "../image/main.png";
 import search from "../image/search.png";
@@ -8,9 +8,8 @@ import mywait from "../image/my-wait.png";
 import liked from "../image/liked.png";
 import etc from "../image/etc.png";
 
-function Menu() {
+function MenuBar() {
   return (
-    <BrowserRouter>
       <div className="Menu">
         <Link to="/">
           <img src={main} className="Menu-icon" alt="Main" />
@@ -28,8 +27,7 @@ function Menu() {
           <img src={etc} className="Menu-icon" alt="Etc" />
         </Link>
       </div>
-    </BrowserRouter>
   );
 }
 
-export default Menu;
+export default MenuBar;

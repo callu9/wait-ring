@@ -1,8 +1,7 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Main.css";
-import Alarm from "../alarm/Alarm";
 
 import notice from "../../image/notice-none.png";
 import map from "../../image/location-logout.png";
@@ -45,7 +44,6 @@ const Main = (props) => {
           </div>
         </div>
       </div>
-      {/* <Outlet /> */}
     </div>
   );
 };

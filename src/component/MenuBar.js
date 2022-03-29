@@ -8,23 +8,35 @@ import mywait from "../image/my-wait.png";
 import liked from "../image/liked.png";
 import etc from "../image/etc.png";
 
+import mainActive from "../image/main-activate.png";
+import searchActive from "../image/search-activate.png";
+import mywaitActive from "../image/my-wait-activate.png";
+import likedActive from "../image/liked-activate.png";
+import etcActive from "../image/etc-activate.png";
+
+let menus = [true, false, false, false, false];
+const changeMenu = (idx) => {
+  menus = [false, false, false, false, false];
+  menus[idx] = true;
+}
+
 function MenuBar() {
   return (
       <div className="Menu">
-        <Link to="/">
-          <img src={main} className="Menu-icon" alt="Main" />
+        <Link to="/" onClick={() => changeMenu(0)} >
+          <img src={menus[0]? mainActive:main} className="Menu-icon" alt="Main" />
         </Link>
-        <Link to="/search">
-          <img src={search} className="Menu-icon" alt="Search" />
+        <Link to="/search" onClick={() => changeMenu(1)}>
+          <img src={menus[1]? searchActive:search} className="Menu-icon" alt="Search" />
         </Link>
-        <Link to="/my-wait">
-          <img src={mywait} className="Menu-icon" alt="My-Wait" />
+        <Link to="/my-wait" onClick={() => changeMenu(2)}>
+          <img src={menus[2]? mywaitActive:mywait} className="Menu-icon" alt="My-Wait" />
         </Link>
-        <Link to="/liked">
-          <img src={liked} className="Menu-icon" alt="Liked" />
+        <Link to="/liked" onClick={() => changeMenu(3)}>
+          <img src={menus[3]? likedActive:liked} className="Menu-icon" alt="Liked" />
         </Link>
-        <Link to="/etc">
-          <img src={etc} className="Menu-icon" alt="Etc" />
+        <Link to="/etc" onClick={() => changeMenu(4)}>
+          <img src={menus[4]? etcActive:etc} className="Menu-icon" alt="Etc" />
         </Link>
       </div>
   );

@@ -5,24 +5,69 @@
     padding-bottom: 55px;
 }
 
-.Search-area {
+//
+// 검색창
+//
+.Search-Area-All > div {
+    display: inline-block;
+}
+
+.Search-Area {
     background-color: $lightGrayColor;
     border-radius: 20px;
     color: $grayColor;
-    height: 40px;
-    
+    min-height: 40px;
 }
 
-.Search-area > * {
+.Search-Bar-Area {
     display: inline-block;
-    position: relative;
+    border: none;
+    background: none;
+    font-family: 'noto Sans KR', sans-serif;
+    margin: 10px;
+    width: 65%;
 }
 
-.Search-Icon {
+.Search-Icon-Area,.Search-Keyword-Cancel-Area {
+    float: right;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+}
+.Cancel-Icon, .Search-Icon {
     width: 20px;
-    margin: 5px;
+}
+.Search-Cacel {
+    float: right;
+    text-align: right;
+    margin-top: auto;
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 9pt;
+    color: #8C8C8C;
 }
 
+//
+// 검색 기록
+//
+.Search-Recent-Keyword-Area {
+    margin: 25px 0 25px 0;
+}
+
+.Search-Recent-Keyword-Ite {
+    vertical-align: middle;
+}
+
+.Search-Recent-Cancel {
+    text-align: right;
+}
+.Search-Recent-Cancel > img {
+    width: 10px;
+    margin: 10px 0 10px 0;
+}
+
+//
+// 인기 검색어
+//
 .SmallHeader {
     font-weight: $header-large-font-weight;
     font-size: 12pt;
@@ -47,6 +92,9 @@
     font-weight: $header-large-font-weight;
 }
 
+//
+// 추천 검색어
+//
 .Recommend-List-area > * {
     display: inline-block;
 }

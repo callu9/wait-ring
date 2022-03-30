@@ -3,3 +3,32 @@
 .MyWait {
     margin: 0 25px 0 25px;
 }
+
+.MyWait-Body-Tab > * {
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+    font-size: 12pt;
+}
+.MyWait-Tab-Inactive {
+    color: $grayColor;
+}
+
+.MyWait-Tab-Active {
+    font-weight: 700;
+    border-bottom: 3px solid $orangeColor;
+}
+
+.MyWait-Body-Content {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.MyWait-Body-None-Icon > img {
+    width: 25px;
+}
+.MyWait-Body-None-Content {
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 9pt;
+    color: #8C8C8C;
+}

@@ -14,32 +14,62 @@ import mywaitActive from "../image/my-wait-activate.png";
 import likedActive from "../image/liked-activate.png";
 import etcActive from "../image/etc-activate.png";
 
-let menus = [true, false, false, false, false];
-const changeMenu = (idx) => {
-  menus = [false, false, false, false, false];
-  menus[idx] = true;
-}
+export default class MenuBar extends React.Component {
+  constructor() {
+    super();
 
-function MenuBar() {
-  return (
+    this.state = {
+      menuFlag: [true, false, false, false, false],
+    };
+  }
+
+  render() {
+    const { menuFlag } = this.state;
+
+    let changeMenu = (idx) => {
+      let arr = [false, false, false, false, false];
+      arr[idx] = true;
+      this.setState({ menuFlag: arr });
+    };
+
+    return (
       <div className="Menu">
-        <Link to="/" onClick={() => changeMenu(0)} >
-          <img src={menus[0]? mainActive:main} className="Menu-icon" alt="Main" />
+        <Link to="/" onClick={() => changeMenu(0)}>
+          <img
+            src={menuFlag[0] ? mainActive : main}
+            className="Menu-icon"
+            alt="Main"
+          />
         </Link>
         <Link to="/search" onClick={() => changeMenu(1)}>
-          <img src={menus[1]? searchActive:search} className="Menu-icon" alt="Search" />
+          <img
+            src={menuFlag[1] ? searchActive : search}
+            className="Menu-icon"
+            alt="Search"
+          />
         </Link>
         <Link to="/my-wait" onClick={() => changeMenu(2)}>
-          <img src={menus[2]? mywaitActive:mywait} className="Menu-icon" alt="My-Wait" />
+          <img
+            src={menuFlag[2] ? mywaitActive : mywait}
+            className="Menu-icon"
+            alt="My-Wait"
+          />
         </Link>
         <Link to="/liked" onClick={() => changeMenu(3)}>
-          <img src={menus[3]? likedActive:liked} className="Menu-icon" alt="Liked" />
+          <img
+            src={menuFlag[3] ? likedActive : liked}
+            className="Menu-icon"
+            alt="Liked"
+          />
         </Link>
         <Link to="/etc" onClick={() => changeMenu(4)}>
-          <img src={menus[4]? etcActive:etc} className="Menu-icon" alt="Etc" />
+          <img
+            src={menuFlag[4] ? etcActive : etc}
+            className="Menu-icon"
+            alt="Etc"
+          />
         </Link>
       </div>
-  );
+    );
+  }
 }
-
-export default MenuBar;

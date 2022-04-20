@@ -41,8 +41,9 @@
     padding: 0 0 15px 0;
 }
 
-.Map {
+.Map > img{
     /* margin-right: 25px; */
+    max-width: 500px;
 }
 .Map > img {
     width: 100%;

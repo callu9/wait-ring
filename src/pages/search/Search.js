@@ -1,149 +1,126 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Search.scss";
 import searchIcon from "../../image/search-bar.png";
 import cancel from "../../image/cancel.png";
 import cancelSearch from "../../image/cancel-search.png";
 
-export default class Search extends React.Component {
-  constructor() {
-    super();
+function Search() {
+  const recentList = [
+    { id: 0, content: "고든램지" },
+    { id: 1, content: "버거" },
+    { id: 2, content: "신사동" },
+  ];
+  const [keyword, setKeyword] = useState("");
+  const [focusFlag, setFocusFlag] = useState(false);
+  const [keywordFlag, setKeywordFlag] = useState(false);
+  const [recentKeyword, setRecentKeyword] = useState(recentList);
 
-    this.state = {
-      keyword: "",
-      focusFlag: false,
-      keywordFlag: false,
-      recentKeyword: [
-        { id: 0, content: "고든램지" },
-        { id: 1, content: "버거" },
-        { id: 2, content: "신사동" },
-      ],
-    };
-  }
+  const initSearchBar = () => {
+    setFocusFlag(!focusFlag);
+  };
 
-  render() {
-    const { keyword, focusFlag, keywordFlag, recentKeyword } = this.state;
+  const initKeyword = (e) => {
+    document.getElementById("Search-Bar-Area").value = "";
+    setKeyword("");
+    setKeywordFlag(false);
+    initSearchBar();
+  };
 
-    const setSearchBar = () => {
-      this.setState({ focusFlag: !focusFlag });
-    };
+  const cancelKeyword = (id) => {
+    let tmp = recentKeyword;
+    setRecentKeyword(tmp.filter(item => item.id!==id));
+  };
 
-    const initKeyword = () => {
-      this.setState({ keyword: "" });
-      this.setState({keywordFlag: false});
-    };
+  const recent = recentKeyword.map((r) => (
+    <tr key={r.id} className="Search-Recent-Keyword-Item">
+      <td className="Search-Recent-Keyword">{r.content}</td>
+      <td className="Search-Recent-Cancel">
+        <img src={cancel} alt="cancle" onClick={() => cancelKeyword(r.id)} />
+      </td>
+    </tr>
+  ));
 
-    let cancelKeyword = (id) => {
-      let tmp = recentKeyword;
-      const idx = recentKeyword.findIndex((r) => {
-        return r.id === id;
-      });
-      tmp.splice(idx, 1);
-      this.setState({ recentKeyword: tmp });
-    };
+  const best = [
+    { id: 1, content: "고든램지" },
+    { id: 2, content: "버거" },
+    { id: 3, content: "연돈" },
+    { id: 4, content: "해운대" },
+    { id: 5, content: "곱창" },
+  ];
 
-    const recent = recentKeyword.map((r) => (
-      <tr key={r.id} className="Search-Recent-Keyword-Item">
-        <td className="Search-Recent-Keyword">{r.content}</td>
-        <td className="Search-Recent-Cancel">
-          <img src={cancel} alt="cancle" onClick={() => cancelKeyword(r.id)} />
-        </td>
-      </tr>
-    ));
+  const bestStyle = function (id) {
+    if (id === 1) return "firstNum";
+    else if (id <= 3) return "secondNum";
+    else return "thirdNum";
+  };
 
-    const best = [
-      { id: 1, content: "고든램지" },
-      { id: 2, content: "버거" },
-      { id: 3, content: "연돈" },
-      { id: 4, content: "해운대" },
-      { id: 5, content: "곱창" },
-    ];
+  const bestList = best.map((item) => (
+    <tr key={item.id}>
+      <td className="Best-List-Item">
+        <p className={bestStyle(item.id)}>{item.id}</p>
+        <p>{item.content}</p>
+      </td>
+    </tr>
+  ));
 
-    const bestStyle = function (id) {
-      if (id === 1) return "firstNum";
-      else if (id <= 3) return "secondNum";
-      else return "thirdNum";
-    };
+  const typeKeyword = (e) => {
+    setKeyword(e.target.value);
+    if (keyword.length > 0) setKeywordFlag(true);
+    else setKeywordFlag(false);
+  };
 
-    const bestList = best.map((item) => (
-      <tr key={item.id}>
-        <td className="Best-List-Item">
-          <p className={bestStyle(item.id)}>{item.id}</p>
-          <p>{item.content}</p>
-        </td>
-      </tr>
-    ));
-
-    const setKeyword = (e) => {
-      this.setState({ keyword: e.target.value });
-      if (keyword.length > 0) this.setState({ keywordFlag: true });
-    };
-
-    let hidden = (
+  return (
+    <>
       <div className="Search">
-        <div className="Search-Area-All">
-          <div className="Search-Area">
+        {!focusFlag ? (
+          <div className="Header">
+            <div>검색</div>
+            <div className="FontSmall">오늘은 어느 맛집에서 웨이링 할까요?</div>
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className={focusFlag ? "Search-Area-All-Hidden" : "Search-Area-All"}>
+          <div className={focusFlag ? "Search-Area-Hidden" : "Search-Area"}>
             <input
               type="text"
               className="Search-Bar-Area"
+              id="Search-Bar-Area"
               placeholder="검색어를 입력하세요."
-              onChange={setKeyword}
+              onFocus={initSearchBar}
+              onChange={typeKeyword}
             />
             <div className="Search-Icon-Area">
               <img src={searchIcon} className="Search-Icon" alt="search-icon" />
             </div>
             <div className="Search-Keyword-Cancel-Area">
-              {keywordFlag &&
-              <img
-                src={cancelSearch}
-                className="Cancel-Icon"
-                alt="Cancel-icon"
-                onClick={initKeyword}
-              />}
-            </div>
-          </div>
-          <div>
-            {focusFlag && (
-              <div className="Search-Cacel" onClick={setSearchBar}>
-                취소
-              </div>
-            )}
-          </div>
-        </div>
-        <div className="Search-Area-Hidden">
-          <table className="Search-Recent-Keyword-Area">
-            <tbody>{recent}</tbody>
-          </table>
-        </div>
-      </div>
-    );
-
-    return (
-      <>
-        {focusFlag ? (
-          hidden
-        ) : (
-          <div className="Search">
-            <div className="Header">
-              <div>검색</div>
-              <div className="FontSmall">
-                오늘은 어느 맛집에서 웨이링 할까요?
-              </div>
-            </div>
-            <div className="Search-Area">
-              <input
-                type="text"
-                className="Search-Bar-Area"
-                placeholder="검색어를 입력하세요."
-                onFocus={setSearchBar}
-              />
-              <div className="Search-Icon-Area">
+              {keywordFlag ? (
                 <img
-                  src={searchIcon}
-                  className="Search-Icon"
-                  alt="search-icon"
+                  src={cancelSearch}
+                  className="Cancel-Icon"
+                  alt="Cancel-icon"
+                  onClick={initKeyword}
                 />
-              </div>
+              ) : (
+                <div className="Cancel-Icon"></div>
+              )}
             </div>
+          </div>
+          {focusFlag && (
+            <div className="Search-Cacel" onClick={initSearchBar}>
+              취소
+            </div>
+          )}
+        </div>
+        {focusFlag && (
+          <div className="Search-Area-Recent-Keyword-Hidden">
+            <table className="Search-Recent-Keyword-Area">
+              <tbody>{recent}</tbody>
+            </table>
+          </div>
+        )}
+        {!focusFlag ? (
+          <>
             <div className="Best-area">
               <div className="SmallHeader">인기 검색어</div>
               <table className="Best-List">
@@ -159,9 +136,13 @@ export default class Search extends React.Component {
                 <div className="keyword">#키워드</div>
               </div>
             </div>
-          </div>
+          </>
+        ) : (
+          <></>
         )}
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
+
+export default Search;

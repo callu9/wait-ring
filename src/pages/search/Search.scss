@@ -8,7 +8,7 @@
 //
 // 검색창
 //
-.Search-Area-All > div {
+.Search-Area-All-Hidden > div {
     display: inline-block;
 }
 
@@ -19,13 +19,18 @@
     min-height: 40px;
 }
 
+.Search-Area-Hidden {
+    @extend .Search-Area;
+    margin-top: 15px;
+    width: calc(100% - 40px);
+}
+
 .Search-Bar-Area {
-    display: inline-block;
     border: none;
     background: none;
     font-family: 'noto Sans KR', sans-serif;
     margin: 10px;
-    width: 65%;
+    width: calc(100% - 100px);
 }
 
 .Search-Icon-Area,.Search-Keyword-Cancel-Area {
@@ -38,9 +43,9 @@
 }
 .Search-Cacel {
     float: right;
+    width: 25px;
     text-align: right;
-    margin-top: auto;
-    margin-left: 15px;
+    margin-top: 30px;
     font-weight: 400;
     font-size: 9pt;
     color: #8C8C8C;

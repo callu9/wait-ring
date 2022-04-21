@@ -10,18 +10,11 @@ import reviewIcon from "../../image/review-list.png";
 import noticeIcon from "../../image/notice.png";
 import qnaIcon from "../../image/qna.png";
 
-// let user = undefined;
-let user = {
-  id: "user01",
-  nickname: "유저01",
-  wait: 6,
-  reserve: 2,
-  review: 4,
-  point: 2626,
-};
-let userFlag = user === undefined ? false : true;
+import storage from "../../storage.js";
 
 function Etc(props) {
+  let user = storage.user[0];
+  let userFlag = user === undefined ? false : true;
   return (
     <div className="Etc">
       <div className="Setting">

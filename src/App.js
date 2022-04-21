@@ -13,6 +13,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Store from "./component/store/Store";
 import MenuBar from "./component/MenuBar";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/liked" element={<Liked />} />
         <Route path="/etc" element={<Etc />} />
         <Route path="/alarm" element={<Alarm />} />
+        <Route path="/store/*" element={<Store />} />
       </Routes>
       <MenuBar />
     </Router>

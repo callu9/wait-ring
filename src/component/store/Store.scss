@@ -1,0 +1,196 @@
+@import "../../style.scss";
+
+.Store {
+  background-color: $lightGrayColor;
+  padding-bottom: 13vh;
+}
+.Store > * {
+  padding: 0px 25px 0 25px;
+}
+
+.Exit > img {
+  width: 15px;
+  margin-top: 25px;
+}
+
+.Store-Header-Area,
+.Store-Detail-Area,
+.Store-Menu-Area,
+.Store-Review-Area {
+  box-shadow: 0 1px 10px 3px #cecece;
+  background-color: white;
+  padding-bottom: 25px;
+}
+
+.Header {
+  margin-top: 25px;
+}
+
+//
+// 맛집 헤더
+//
+.Store-Header-Detail {
+  margin-top: 50px;
+}
+
+.Store-Header-Detail > div {
+  display: inline-block;
+}
+
+.Store-name {
+  font-size: $header-large-font-size;
+  font-weight: $header-large-font-weight;
+}
+
+.Store-location,
+.Store-reviews {
+  font-size: $header-small-font-size;
+  color: $grayColor;
+}
+
+strong {
+  color: black;
+}
+
+.Store-reviews > div {
+  margin-top: 5px;
+  margin-right: 8px;
+  display: inline-block;
+  font-size: $header-small-font-size;
+}
+
+.Store-Review-Star-Area > img {
+  width: 12px;
+}
+
+.Store-Header-Detail-Right {
+  float: right;
+}
+
+.Store-liked {
+  width: 25px;
+  text-align: center;
+  color: $orangeColor;
+  font-size: $header-small-font-size;
+}
+
+.Store-liked > div > img {
+  width: 25px;
+}
+
+//
+// 매장 정보
+//
+.Store-Detail-Area td {
+  padding-bottom: 5px;
+}
+
+.Store-Detail-Area td {
+  border: none;
+}
+
+.Store-Dtail-Image {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.Store-Dtail-Image > .ListItem-Slide {
+  display: inline-block;
+  margin: 5px;
+}
+
+.ListItem-Slide > .ListItem-image-area {
+  margin-top: 15px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 5px 2px #cecece;
+}
+
+.ListItem-image-area {
+  width: 30vw;
+  height: 30vw;
+}
+
+.ListItem-image-area > img {
+  display: inline-block; /* Otherwise it keeps some space around baseline */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50, 50);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+
+//
+// 대표 메뉴
+//
+.Store-Menu-Item > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Store-Menu-Image > img {
+  width: 20vw;
+  border-radius: 15px;
+  margin: 2vw 2vw 2vw 0;
+}
+
+.Store-Menu-Text {
+  width: calc(76vw - 60px);
+  margin: 2vw 0 2vw 1vw;
+  white-space: normal;
+}
+
+.Store-Menu-Name,
+.Store-Menu-Price {
+  font-weight: 500;
+}
+
+.Store-Menu-Price {
+  color: $orangeColor;
+}
+
+.Store-Menu-Detail {
+  color: $grayColor;
+  font-size: $header-small-font-size;
+}
+
+//
+// 리뷰
+//
+.More {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.More > div {
+  box-shadow: 0 1px 10px 3px #cecece;
+  padding: 10px 20px 10px 20px;
+  border-radius: 25px;
+  display: inline-block;
+  font-weight: $header-large-font-weight;
+}
+
+.Store-Review-Item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.Store-Review-Item > div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Store-Review-Star > * {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.Store-Review-Etc {
+  color: $grayColor;
+}

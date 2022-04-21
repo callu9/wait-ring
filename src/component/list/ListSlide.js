@@ -7,6 +7,7 @@ const Slide = ({ data = [] }) => (
     {data.map(({ id, name, imageUrl, areaDong, review }) => (
       <SlideItem
         key={id}
+        id={(id>=2)?2:1}
         name={name}
         areaDong={areaDong}
         review={review}

@@ -61,6 +61,21 @@
 .ListItem-name {
   font-weight: 700;
   font-size: 12pt;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ListItem-name-100 {
+  @extend .ListItem-name;
+  width: 20vw;
+  max-width: 150px;
+}
+
+.ListItem-name-112 {
+  @extend .ListItem-name;
+  width: 35vw;
+  max-width: 200px;
 }
 
 .ListItem-foot {
@@ -88,5 +103,5 @@
 
 .Slide-area > * {
   display: inline-block;
-  margin: 5px;
+  margin: 0px;
 }

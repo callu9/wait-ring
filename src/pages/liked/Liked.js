@@ -2,7 +2,7 @@ import React from "react";
 import List from "../../component/list/List.js";
 
 import storage from "../../storage.js";
-import "./Liked.css";
+import "./Liked.scss";
 
 function Liked(props) {
   return (

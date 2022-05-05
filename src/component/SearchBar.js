@@ -28,7 +28,7 @@ const SearchBar = (props) => {
 
   const typeKeyword = (e) => {
     setKeyword(e.target.value);
-    if (keyword.length > 0) setKeywordFlag(true);
+    if (keyword !== null && keyword.length > 0) setKeywordFlag(true);
     else setKeywordFlag(false);
   };
 

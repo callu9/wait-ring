@@ -1,0 +1,20 @@
+@import "../../style.scss";
+
+.Liked {
+  margin: 25px 0 25px 25px;
+  padding-bottom: 55px;
+}
+
+.Header {
+  font-weight: 700;
+  font-size: 15pt;
+  padding-top: 30px;
+  margin-bottom: 25px;
+}
+
+.FontSmall {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 9pt;
+  color: $grayColor;
+}

@@ -1,0 +1,49 @@
+@import "../style.scss";
+
+//
+// 검색창
+//
+.Search-Area-All-Hidden > div {
+  display: inline-block;
+}
+
+.Search-Area {
+  background-color: $lightGrayColor;
+  border-radius: 20px;
+  color: $grayColor;
+  min-height: 40px;
+}
+
+.Search-Area-Hidden {
+  @extend .Search-Area;
+  margin-top: 15px;
+  width: calc(100% - 40px);
+}
+
+.Search-Bar-Area {
+  border: none;
+  background: none;
+  font-family: "noto Sans KR", sans-serif;
+  margin: 10px;
+  width: calc(100% - 100px);
+}
+
+.Search-Icon-Area,
+.Search-Keyword-Cancel-Area {
+  float: right;
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+}
+.Cancel-Icon,
+.Search-Icon {
+  width: 20px;
+}
+.Search-Cacel {
+  float: right;
+  width: 25px;
+  text-align: right;
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 9pt;
+  color: #8c8c8c;
+}

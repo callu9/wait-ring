@@ -7,6 +7,9 @@ const storage = {
       imageUrl:
         "https://www.withbuyer.com/news/photo/202101/20946_11658_1837.jpg",
       review: "4.3",
+      keyword: ["일식", "라멘"],
+      waitingFlag: true,
+      reservationFlag: true,
     },
     {
       id: 2,
@@ -14,6 +17,9 @@ const storage = {
       areaDong: "상계동",
       imageUrl: "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
       review: "4.0",
+      keyword: ["일식", "함바그"],
+      waitingFlag: true,
+      reservationFlag: true,
     },
     {
       id: 3,
@@ -21,6 +27,9 @@ const storage = {
       areaDong: "상계동",
       imageUrl: "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
       review: "4.0",
+      keyword: ["일식", "라멘"],
+      waitingFlag: false,
+      reservationFlag: true,
     },
     {
       id: 4,
@@ -28,6 +37,9 @@ const storage = {
       areaDong: "상계동",
       imageUrl: "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
       review: "4.0",
+      keyword: ["일식", "키워드"],
+      waitingFlag: false,
+      reservationFlag: false,
     },
   ],
   reviewData: [

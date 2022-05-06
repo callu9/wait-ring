@@ -4,14 +4,15 @@ import "./List.scss"
 
 const List = ({ data = [] }) => (
   <div className="List-area">
-    {data.map(({ id, name, imageUrl, areaDong, review }) => (
+    {data.map((item) => (
       <ListItem
-        key={id}
-        id={(id>=2)?2:1}
-        name={name}
-        areaDong={areaDong}
-        review={review}
-        imageUrl={imageUrl}
+        key={item.id}
+        id={(item.id>=2)?2:1}
+        name={item.name}
+        areaDong={item.areaDong}
+        review={item.review}
+        imageUrl={item.imageUrl}
+        keyword={item.keyword}
       />
     ))}
   </div>

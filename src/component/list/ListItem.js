@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import star from "../../image/star.png";
 
-const ListItem = ({ id, name, areaDong, imageUrl, review }) => (
+const ListItem = ({ id, name, areaDong, imageUrl, review, keyword }) => (
   <>
     <Link to={"/store/" + id}>
       <div className="ListItem-area">
@@ -19,8 +19,12 @@ const ListItem = ({ id, name, areaDong, imageUrl, review }) => (
           </div>
         </div>
         <div className="keyword-area">
-          <div className="keyword">#키워드</div>
-          <div className="keyword">#키워드</div>
+          {keyword.map((k) => (
+            <div key={k.id} className="keyword">
+              <span>#</span>
+              <span className="keyword-content">{k}</span>
+            </div>
+          ))}
         </div>
       </div>
     </Link>

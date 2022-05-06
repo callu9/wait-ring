@@ -9,12 +9,16 @@ function Search() {
     setFocusFlag(fg);
   };
 
+  const searchKeyword = (keyword) => {
+    window.location.pathname = "search/" + keyword;
+  };
+
   const best = [
-    { id: 1, content: "고든램지" },
-    { id: 2, content: "버거" },
-    { id: 3, content: "연돈" },
-    { id: 4, content: "해운대" },
-    { id: 5, content: "곱창" },
+    { id: 1, keyword: "고든램지" },
+    { id: 2, keyword: "버거" },
+    { id: 3, keyword: "연돈" },
+    { id: 4, keyword: "해운대" },
+    { id: 5, keyword: "곱창" },
   ];
 
   const bestStyle = function (id) {
@@ -25,11 +29,24 @@ function Search() {
 
   const bestList = best.map((item) => (
     <tr key={item.id}>
-      <td className="Best-List-Item">
+      <td className="Best-List-Item" onClick={() => searchKeyword(item.keyword)}>
         <p className={bestStyle(item.id)}>{item.id}</p>
-        <p>{item.content}</p>
+        <p>{item.keyword}</p>
       </td>
     </tr>
+  ));
+
+  const recommend = [
+    { id: 1, keyword: "키워드" },
+    { id: 2, keyword: "키워드" },
+    { id: 3, keyword: "함바그" },
+  ];
+
+  const recommendList = recommend.map((item) => (
+    <div key={item.id} className="keyword" onClick={() => searchKeyword(item.keyword)}>
+      <span>#</span>
+      <span className="keyword-content">{item.keyword}</span>
+    </div>
   ));
 
   return (
@@ -54,12 +71,7 @@ function Search() {
             </div>
             <div className="Recommend-area">
               <div className="SmallHeader">추천 검색어</div>
-              <div className="Recommend-List-area">
-                <div className="keyword">#키워드</div>
-                <div className="keyword">#키워드</div>
-                <div className="keyword">#키워드</div>
-                <div className="keyword">#키워드</div>
-              </div>
+              <div className="Recommend-List-area">{recommendList}</div>
             </div>
           </>
         ) : (

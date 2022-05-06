@@ -18,7 +18,7 @@ export default class MenuBar extends React.Component {
   constructor() {
     super();
 
-    const menuNum = window.localStorage.getItem("menuNum");
+    const menuNum = window.sessionStorage.getItem("menuNum");
 
     function makeMenuFg(menuNum) {
       let fgArr = [false, false, false, false, false];
@@ -31,9 +31,6 @@ export default class MenuBar extends React.Component {
       let pathName = window.location.pathname.split("/")[1];
       let num = 0;
       switch (pathName) {
-        case "":
-          num = 0;
-          break;
         case "search":
           num = 1;
           break;
@@ -45,6 +42,9 @@ export default class MenuBar extends React.Component {
           break;
         case "etc":
           num = 4;
+          break;
+        default:
+          num = 0;
           break;
       }
       fgArr[num] = true;
@@ -63,7 +63,7 @@ export default class MenuBar extends React.Component {
       let arr = [false, false, false, false, false];
       arr[idx] = true;
       this.setState({ menuFlag: arr });
-      window.localStorage.setItem("menuNum", idx);
+      window.sessionStorage.setItem("menuNum", idx);
     };
 
     return (

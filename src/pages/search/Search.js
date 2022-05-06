@@ -43,7 +43,7 @@ function Search() {
         ) : (
           <></>
         )}
-        <SearchBar focusFlag={focusFlag} func={initSearchBar} />
+        <SearchBar keyword="" focusFlag={focusFlag} func={initSearchBar} />
         {!focusFlag ? (
           <>
             <div className="Best-area">

@@ -11,8 +11,8 @@ const SearchBar = (props) => {
     { id: 1, content: "버거" },
     { id: 2, content: "신사동" },
   ];
-  const [keyword, setKeyword] = useState(props.keyword !== undefined ? props.keyword : "");
-  const [keywordFlag, setKeywordFlag] = useState(false);
+  const [keyword, setKeyword] = useState(props.keyword);
+  const [keywordFlag, setKeywordFlag] = useState(props.keyword !== "" ? true : false);
   const [recentKeyword, setRecentKeyword] = useState(recentList);
 
   const initSearchBar = () => {
@@ -23,7 +23,7 @@ const SearchBar = (props) => {
     document.getElementById("Search-Bar-Area").value = "";
     setKeyword("");
     setKeywordFlag(false);
-    initSearchBar();
+    if(props.focusFlag) initSearchBar();
   };
 
   const typeKeyword = (e) => {
@@ -33,18 +33,22 @@ const SearchBar = (props) => {
   };
 
   const searchKeyword = (e) => {
-    if ((e === "click" || e.key === "Enter") && keyword.length > 0) {
-      document.location.href = "search/" + keyword;
-    }
+    if ((e === "click" || e.key === "Enter") && keyword.length > 0) 
+      window.location.pathname = "search/" + keyword;
   };
 
+  const searchRecent = (recent) => {
+    window.location.pathname = "search/" + recent;
+  }
+  
   const cancelKeyword = (id) => {
     let tmp = recentKeyword;
     setRecentKeyword(tmp.filter((item) => item.id !== id));
   };
+
   const recent = recentKeyword.map((r) => (
     <tr key={r.id} className="Search-Recent-Keyword-Item">
-      <td className="Search-Recent-Keyword">{r.content}</td>
+      <td className="Search-Recent-Keyword" onClick={() => searchRecent(r.content)}>{r.content}</td>
       <td className="Search-Recent-Cancel">
         <img src={cancel} alt="cancel" onClick={() => cancelKeyword(r.id)} />
       </td>

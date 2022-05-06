@@ -11,7 +11,7 @@ const SearchBar = (props) => {
     { id: 1, content: "버거" },
     { id: 2, content: "신사동" },
   ];
-  const [keyword, setKeyword] = useState(props.keyword !== null ? props.keyword : "");
+  const [keyword, setKeyword] = useState(props.keyword !== undefined ? props.keyword : "");
   const [keywordFlag, setKeywordFlag] = useState(false);
   const [recentKeyword, setRecentKeyword] = useState(recentList);
 

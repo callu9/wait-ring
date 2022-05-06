@@ -31,7 +31,7 @@ function SearchResult() {
             <div className="keyword">예약 가능</div>
           </div>
           <div className="Search-Result-Body">
-            {result.length > 0 ? <List data={result} /> : <div>검색 결과가 없습니다.</div>}
+            {result.length > 0 ? <List data={result} /> : <div className="Search-Result-Body-None">검색 결과가 없습니다.</div>}
           </div>
         </div>
       )}

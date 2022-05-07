@@ -6,6 +6,14 @@ import iconComplete from "../../image/waitring-complete.png";
 
 import Map from "../../component/map/Map";
 
+const WaitMore = () => {
+  return (
+    <div className="More">
+      <div>지난 웨이팅 내역 ＞</div>
+    </div>
+  );
+};
+
 const WaitNone = () => {
   return (
     <div className="MyWait-Body-None">
@@ -40,8 +48,8 @@ const WaitComplete = () => {
 };
 const WaitTable = ({ data = {} }) => {
   return (
-    <div className="MyWait-Table">
-      <table>
+    <div className="MyWait-Content">
+      <table className="MyWait-Table">
         <tbody>
           <tr className="MyWait-Table-row">
             <td className="left">매장명</td>
@@ -92,6 +100,7 @@ const Wait = ({ data = {} }) => {
         <>
           <WaitComplete />
           <WaitTable data={data} />
+          <WaitMore />
         </>
       );
     else
@@ -99,9 +108,16 @@ const Wait = ({ data = {} }) => {
         <>
           <WaitIncomplete />
           <WaitTable data={data} />
+          <WaitMore />
         </>
       );
-  } else return <WaitNone />;
+  } else
+    return (
+      <>
+        <WaitNone />
+        <WaitMore />
+      </>
+    );
 };
 
 export default Wait;

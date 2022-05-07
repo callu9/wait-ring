@@ -13,7 +13,7 @@ import qnaIcon from "../../image/qna.png";
 import storage from "../../storage.js";
 
 function Etc(props) {
-  let user = storage.user[0];
+  let user = storage.user;
   let userFlag = user === undefined ? false : true;
   return (
     <div className="Etc">
@@ -28,9 +28,9 @@ function Etc(props) {
         {userFlag ? (
           <div>
             <p className="Header-nickname">{user.nickname}</p>
-              님,
-              <br />
-              환영합니다.
+            님,
+            <br />
+            환영합니다.
           </div>
         ) : (
           <div>

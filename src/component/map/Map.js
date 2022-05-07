@@ -13,7 +13,7 @@ export default function Map(data) {
         width: "100%",
         height: "30vh",
         minHeight: "150px",
-        margin: "15px 0 15px 0",
+        margin: "5px 0 5px 0",
       }}
     ></div>
   );

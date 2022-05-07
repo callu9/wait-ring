@@ -1,14 +1,12 @@
 const storage = {
-  user: [
-    {
-      id: "user01",
-      nickname: "유저01",
-      wait: 6,
-      reserve: 2,
-      review: 4,
-      point: 2626,
-    },
-  ],
+  user: {
+    id: "user01",
+    nickname: "유저01",
+    wait: 6,
+    reserve: 2,
+    review: 4,
+    point: 2626,
+  },
   storeData: [
     {
       id: 1,

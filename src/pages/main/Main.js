@@ -10,6 +10,7 @@ import ListSlide from "../../component/list/ListSlide.js";
 import ReviewListSlide from "../../component/review/ReviewListSlide.js";
 
 import storage from "../../storage.js";
+import Map from "../../component/map/Map";
 
 export default class MyWait extends React.Component {
   constructor() {
@@ -22,6 +23,26 @@ export default class MyWait extends React.Component {
 
   render() {
     const { alarmFlag } = this.state;
+
+    const user = storage.user;
+
+    const MainMap = ({ user: {} }) => {
+      let userLocation = {};
+      if (navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          // console.log(pos);
+          userLocation = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        });
+      if (user.id !== undefined) {
+        return <Map data={userLocation} />;
+      } else
+        return (
+          <div className="Map">
+            <img src={map} alt="temp" />
+          </div>
+        );
+    };
+
     return (
       <div className="Main">
         <div className="Alarm">
@@ -44,8 +65,8 @@ export default class MyWait extends React.Component {
           </div>
           <div className="Location-area">
             <div>내 주변 웨이팅 맛집</div>
-            <div className="Map">
-              <img src={map} alt="temp" />
+            <div>
+              <MainMap user={user} />
             </div>
           </div>
           <div className="Review-area">

@@ -6,6 +6,14 @@ import iconComplete from "../../image/waitring-complete.png";
 
 import Map from "../../component/map/Map";
 
+const ReserveMore = () => {
+  return (
+    <div className="More">
+      <div>지난 예약 내역 ＞</div>
+    </div>
+  );
+};
+
 const ReserveNone = () => {
   return (
     <div className="MyWait-Body-None">
@@ -38,8 +46,8 @@ const ReserveComplete = () => {
 };
 const ReserveTable = ({ data = {} }) => {
   return (
-    <div className="MyWait-Table">
-      <table>
+    <div className="MyWait-Content">
+      <table className="MyWait-Table">
         <tbody>
           <tr className="MyWait-Table-row">
             <td className="left">매장명</td>
@@ -85,6 +93,7 @@ const Reserve = ({ data = {} }) => {
         <>
           <ReserveComplete />
           <ReserveTable data={data} />
+          <ReserveMore />
         </>
       );
     else
@@ -92,9 +101,16 @@ const Reserve = ({ data = {} }) => {
         <>
           <ReserveIncomplete />
           <ReserveTable data={data} />
+          <ReserveMore />
         </>
       );
-  } else return <ReserveNone />;
+  } else
+    return (
+      <>
+        <ReserveNone />
+        <ReserveMore />
+      </>
+    );
 };
 
 export default Reserve;

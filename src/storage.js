@@ -1,23 +1,33 @@
 const storage = {
+  user: [
+    {
+      id: "user01",
+      nickname: "유저01",
+      wait: 6,
+      reserve: 2,
+      review: 4,
+      point: 2626,
+    },
+  ],
   storeData: [
     {
       id: 1,
-      name: "호랑이식당 롯데영등포점",
-      areaDong: "영등포동",
+      name: "고든램지 버거",
+      areaDong: "신천동",
       imageUrl:
-        "https://www.withbuyer.com/news/photo/202101/20946_11658_1837.jpg",
-      review: "4.3",
-      keyword: ["일식", "라멘"],
+        "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F01%2FHypebeast-check-gordon-ramsay-burger-korean-restaurant-info-22.jpg?w=1600&cbr=1&q=90&fit=max",
+      review: "4.8",
+      keyword: ["양식", "버거"],
       waitingFlag: true,
-      reservationFlag: true,
+      reservationFlag: false,
     },
     {
       id: 2,
-      name: "후쿠오카함바그 롯데백화점노원",
-      areaDong: "상계동",
-      imageUrl: "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
-      review: "4.0",
-      keyword: ["일식", "함바그"],
+      name: "호랑이식당 롯데영등포점",
+      areaDong: "영등포동",
+      imageUrl: "https://www.withbuyer.com/news/photo/202101/20946_11658_1837.jpg",
+      review: "4.3",
+      keyword: ["일식", "라멘"],
       waitingFlag: true,
       reservationFlag: true,
     },
@@ -27,8 +37,8 @@ const storage = {
       areaDong: "상계동",
       imageUrl: "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
       review: "4.0",
-      keyword: ["일식", "라멘"],
-      waitingFlag: false,
+      keyword: ["일식", "함바그"],
+      waitingFlag: true,
       reservationFlag: true,
     },
     {
@@ -48,8 +58,7 @@ const storage = {
       name: "호랑이식당 롯데영등포점",
       areaDong: "영등포동",
       review: "4.8",
-      reviewContent:
-        "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
+      reviewContent: "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
       nickname: "닉네임",
     },
     {
@@ -71,19 +80,80 @@ const storage = {
       nickname: "닉네임",
     },
   ],
-  user: [
-    {
-      id: "user01",
-      nickname: "유저01",
-      wait: 6,
-      reserve: 2,
-      review: 4,
-      point: 2626,
-    },
-  ],
   storeDetail: [
     {
       id: 1,
+      name: "고든램지버거",
+      areaDong: "신천동",
+      areaDetail: "서울 송파구 올림픽로 300 롯데월드몰 B1층",
+      review: 4.8,
+      reviewNum: 2626,
+      liked: 1326,
+      keywords: ["프리미엄", "양식", "버거"],
+      openTime: "10:00",
+      closeTime: "20:30",
+      closeDay: "매달 셋째주 월요일",
+      images: [
+        "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F11%2FGordon-ramsay-burger-korean-open-date-official-info-02.jpg?q=75&w=800&cbr=1&fit=max",
+        "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F01%2FHypebeast-check-gordon-ramsay-burger-korean-restaurant-info-23.jpg?w=1600&cbr=1&q=90&fit=max",
+        "https://blog.kakaocdn.net/dn/rB0Wj/btrapGjFjND/5zK1gXkq5Hsm24n4yE6lvk/img.jpg",
+      ],
+      menus: [
+        {
+          id: 1,
+          name: "메뉴명",
+          price: 15000,
+          detail:
+            "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
+          imageUrl:
+            "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F11%2FGordon-ramsay-burger-korean-open-date-official-info-02.jpg?q=75&w=800&cbr=1&fit=max",
+        },
+        {
+          id: 2,
+          name: "메뉴명",
+          price: 15000,
+          detail:
+            "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
+          imageUrl:
+            "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F01%2FHypebeast-check-gordon-ramsay-burger-korean-restaurant-info-23.jpg?w=1600&cbr=1&q=90&fit=max",
+        },
+        {
+          id: 3,
+          name: "메뉴명",
+          price: 15000,
+          detail:
+            "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
+          imageUrl: "https://blog.kakaocdn.net/dn/rB0Wj/btrapGjFjND/5zK1gXkq5Hsm24n4yE6lvk/img.jpg",
+        },
+      ],
+      reviews: [
+        {
+          id: 1,
+          review: "3.0",
+          reviewContent: "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
+          nickname: "닉네임",
+          timestamp: "1시간 전",
+        },
+        {
+          id: 2,
+          review: "4.8",
+          reviewContent:
+            "리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :)",
+          nickname: "닉네임",
+          timestamp: "1시간 전",
+        },
+        {
+          id: 3,
+          review: "4.3",
+          reviewContent:
+            "내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 ",
+          nickname: "닉네임",
+          timestamp: "1시간 전",
+        },
+      ],
+    },
+    {
+      id: 2,
       name: "호랑이식당 롯데영등포점",
       areaDong: "영등포동",
       areaDetail: "서울특별시 영등포구 경인로 846 1층",
@@ -132,8 +202,7 @@ const storage = {
         {
           id: 1,
           review: "3.0",
-          reviewContent:
-            "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
+          reviewContent: "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
           nickname: "닉네임",
           timestamp: "1시간 전",
         },
@@ -156,7 +225,7 @@ const storage = {
       ],
     },
     {
-      id: 2,
+      id: 3,
       name: "후쿠오카함바그 롯데백화점노원",
       areaDong: "상계동",
       areaDetail: "서울특별시 노원구 동일로 1414",
@@ -188,8 +257,7 @@ const storage = {
           price: 15000,
           detail:
             "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
-          imageUrl:
-            "https://photo.akmall.com/image4/goods/78/32/74/79/78327479_M_350.jpg",
+          imageUrl: "https://photo.akmall.com/image4/goods/78/32/74/79/78327479_M_350.jpg",
         },
         {
           id: 3,
@@ -205,8 +273,78 @@ const storage = {
         {
           id: 1,
           review: "3.0",
+          reviewContent: "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
+          nickname: "닉네임",
+          timestamp: "1시간 전",
+        },
+        {
+          id: 2,
+          review: "4.8",
           reviewContent:
-            "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
+            "리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :) 리뷰입니다. :)",
+          nickname: "닉네임",
+          timestamp: "1시간 전",
+        },
+        {
+          id: 3,
+          review: "4.3",
+          reviewContent:
+            "내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 ",
+          nickname: "닉네임",
+          timestamp: "1시간 전",
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: "후쿠오카함바그 롯데백화점노원",
+      areaDong: "상계동",
+      areaDetail: "서울특별시 노원구 동일로 1414",
+      review: 4.3,
+      reviewNum: 2626,
+      liked: 26,
+      keywords: ["깨끗한", "일식", "라멘"],
+      openTime: "10:00",
+      closeTime: "20:30",
+      closeDay: "매달 셋째주 월요일",
+      images: [
+        "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
+        "https://www.gimhae.go.kr/CmsMultiFile/view.do?multifileId=MF00002744&idx=15896&s=800x800",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6awLHGWLGuC7HDu80-FZBtwWW9-WIwOW0RQ&usqp=CAU",
+      ],
+      menus: [
+        {
+          id: 1,
+          name: "메뉴명",
+          price: 15000,
+          detail:
+            "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
+          imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuAmGxad5NjtCXj6MupWPg-jBQpxsP6MMDoxDzmCYxT1GfJwwPeAnvijP7UzvrdpYGuoE&usqp=CAU",
+        },
+        {
+          id: 2,
+          name: "메뉴명",
+          price: 15000,
+          detail:
+            "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
+          imageUrl: "https://photo.akmall.com/image4/goods/78/32/74/79/78327479_M_350.jpg",
+        },
+        {
+          id: 3,
+          name: "메뉴명",
+          price: 15000,
+          detail:
+            "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
+          imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl7NTqm9Yet_q0V1b6kOF1RLBAfQDM1BY-IqXPb4v41Ot2MIg-gIqGqUIRySgA632jPQ8&usqp=CAU",
+        },
+      ],
+      reviews: [
+        {
+          id: 1,
+          review: "3.0",
+          reviewContent: "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
           nickname: "닉네임",
           timestamp: "1시간 전",
         },
@@ -229,6 +367,25 @@ const storage = {
       ],
     },
   ],
+  waitingData: {
+    storeName: "고든램지버거",
+    storeId: 1,
+    storeLocation: { lat: 37.5133093, lng: 127.1015865 },
+    waitingNum: 4,
+    waitingBefore: 3,
+    adult: 2,
+    child: 1,
+    status: 0,
+  },
+  reservationData: {
+    storeName: "호랑이식당 롯데영등포점",
+    storeId: 2,
+    storeLocation: { lat: 37.5158794, lng: 126.9077981 },
+    reserveDate: "2022.00.00(월) 00:00",
+    adult: 2,
+    child: 0,
+    status: 1,
+  },
 };
 
 export default storage;

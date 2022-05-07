@@ -1,25 +1,28 @@
 .Menu {
-    justify-content: center;
-    width: 100%;
-    min-height: 55px;
-    height: 10%;
-    bottom: 0px;
-    position: fixed;
-    display: flex;
-    background-color: white;
-    box-shadow: 0 -1px 10px 3px #CECECE;
+  z-index: 1;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  width: 100%;
+  min-height: 55px;
+  height: 10%;
+  display: flex;
+  background-color: white;
+  box-shadow: 0 -1px 10px 3px #cecece;
 }
 
 .Menu > * {
-    display: inline-block;
-    margin: auto;
-    padding: 5px;
-    max-width: 85px;
-    width: 20%; 
-    text-align: center;
+  display: inline-block;
+  margin: auto;
+  padding: 5px;
+  max-width: 85px;
+  width: 20%;
+  text-align: center;
 }
 
 .Menu-icon {
-    padding: 5%;
-    width: 70%;
+  padding: 5%;
+  width: 70%;
 }

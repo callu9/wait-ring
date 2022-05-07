@@ -134,10 +134,25 @@ strong {
   vertical-align: middle;
 }
 
-.Store-Menu-Image > img {
+.Store-Menu-Image > div {
   width: 20vw;
-  border-radius: 15px;
+  height: 20vw;
   margin: 2vw 2vw 2vw 0;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.MenuImage {
+  border-radius: 15px;
+  display: inline-block; /* Otherwise it keeps some space around baseline */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50, 50);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
 }
 
 .Store-Menu-Text {

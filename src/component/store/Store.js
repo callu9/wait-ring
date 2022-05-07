@@ -9,16 +9,19 @@ import liked from "../../image/liked-full.png";
 
 import storage from "../../storage.js";
 
+function goBack() {
+  window.history.go(-1);
+}
 function Store(props) {
-  const params = window.location.href.split('/');
-  const id = params[params.length-1];
-  const storeDetail = storage.storeDetail[id-1];
+  const params = window.location.href.split("/");
+  const id = params[params.length - 1];
+  const storeDetail = storage.storeDetail[id - 1];
 
   return (
     <div className="Store">
       <div className="Store-Header-Area">
         <div className="Exit">
-          <img src={exit} alt="Exit-Icon" />
+          <img src={exit} alt="Exit-Icon" onClick={goBack} />
         </div>
         <div className="Store-Header-Detail">
           <div className="Store-Header-Detail-Left">

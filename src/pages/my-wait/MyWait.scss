@@ -1,34 +1,66 @@
 @import "../../style.scss";
 
 .MyWait {
-    margin: 0 25px 0 25px;
+  margin: 0 25px 0 25px;
 }
 
+//
+// 웨이링/예약 선택 탭
+//
 .MyWait-Body-Tab > * {
-    display: inline-block;
-    margin: 5px 5px 5px 0;
-    font-size: 12pt;
+  display: inline-block;
+  margin: 5px 5px 5px 0;
+  font-size: 12pt;
 }
 .MyWait-Tab-Inactive {
-    color: $grayColor;
+  color: $grayColor;
 }
 
 .MyWait-Tab-Active {
-    font-weight: 700;
-    border-bottom: 3px solid $orangeColor;
+  font-weight: 700;
+  border-bottom: 3px solid $orangeColor;
 }
 
+//
+// 웨이링/예약 내역
+//
 .MyWait-Body-Content {
-    text-align: center;
-    margin-top: 100px;
+  text-align: center;
+  margin-top: 40px;
 }
 
-.MyWait-Body-None-Icon > img {
-    width: 25px;
+.MyWait-Body-Icon > img {
+  width: 25px;
 }
-.MyWait-Body-None-Content {
-    margin-top: 5px;
-    font-weight: 400;
-    font-size: 9pt;
-    color: #8C8C8C;
+.MyWait-Body-None,
+.MyWait-Body-Incomplete,
+.MyWait-Body-Complete {
+  margin: 5px 0 25px 0;
+  font-weight: 400;
+  font-size: 9pt;
+  color: #8c8c8c;
+}
+
+.MyWait-Table {
+  margin: 40px 0 40px 0;
+}
+
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+  font-weight: 700;
+}
+.right-orange {
+  color: $orangeColor;
+}
+
+.MyWait-Table-row > * {
+  border: 0px;
+  padding: 5px 0 5px 0;
+}
+
+.MyWait-Map {
+  margin: 25px 0 25px 0;
 }

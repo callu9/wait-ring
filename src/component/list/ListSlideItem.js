@@ -1,12 +1,13 @@
 import React from "react";
-import "./List.scss";
-
-import { Link } from "react-router-dom";
 import star from "../../image/star.png";
+
+function movePage(id) {
+  document.location.pathname = "store/" + id;
+}
 
 const ListSlideItem = ({ id, name, imageUrl, areaDong, review }) => (
   <>
-    <Link to={"/store/" + id}>
+    <div onClick={() => movePage(id)}>
       <div className="ListItem-area">
         <div className="ListItem-image-area-100">
           <img src={imageUrl} className="ListItem-image-1x1" alt="store-img" />
@@ -20,7 +21,7 @@ const ListSlideItem = ({ id, name, imageUrl, areaDong, review }) => (
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   </>
 );
 

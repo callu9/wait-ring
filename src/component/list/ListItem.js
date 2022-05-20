@@ -1,16 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import star from "../../image/star.png";
 
-function movePage(id) {
-  document.location.pathname = "store/" + id;
-}
 const ListItem = ({ id, name, areaDong, imageUrl, review, keyword }) => (
   <>
-    <div className="ListItem-area" onClick={() => movePage(id)}>
-      <div className="ListItem-image-area-112">
-        <img src={imageUrl} className="ListItem-image-1x1" alt="store-img" />
-      </div>
-      <div className="ListItem-name-112">{name}</div>
+    <div className="ListItem-area">
+      <Link to={"/store/"+id} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+        <div className="ListItem-image-area-112">
+          <img src={imageUrl} className="ListItem-image-1x1" alt="store-img" />
+        </div>
+        <div className="ListItem-name-112">{name}</div>
+      </Link>
       <div className="ListItem-foot">
         <div className="ListItem-area">{areaDong}</div>
         <div className="ListItem-star">

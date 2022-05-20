@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./SearchBar.scss";
 
 import cancel from "../image/cancel.png";
@@ -36,10 +37,6 @@ const SearchBar = (props) => {
     if ((e === "click" || e.key === "Enter") && keyword.length > 0) 
       window.location.pathname = "search/" + keyword;
   };
-
-  const searchRecent = (recent) => {
-    window.location.pathname = "search/" + recent;
-  }
   
   const cancelKeyword = (id) => {
     let tmp = recentKeyword;
@@ -48,7 +45,7 @@ const SearchBar = (props) => {
 
   const recent = recentKeyword.map((r) => (
     <tr key={r.id} className="Search-Recent-Keyword-Item">
-      <td className="Search-Recent-Keyword" onClick={() => searchRecent(r.content)}>{r.content}</td>
+      <td className="Search-Recent-Keyword"><Link to={"search/"+r.content}>{r.content}</Link></td>
       <td className="Search-Recent-Cancel">
         <img src={cancel} alt="cancel" onClick={() => cancelKeyword(r.id)} />
       </td>

@@ -112,9 +112,9 @@ const storage = {
       closeTime: "20:30",
       closeDay: "매달 셋째주 월요일",
       images: [
+        "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F01%2FHypebeast-check-gordon-ramsay-burger-korean-restaurant-info-22.jpg?w=1600&cbr=1&q=90&fit=max",
         "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F11%2FGordon-ramsay-burger-korean-open-date-official-info-02.jpg?q=75&w=800&cbr=1&fit=max",
         "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F01%2FHypebeast-check-gordon-ramsay-burger-korean-restaurant-info-23.jpg?w=1600&cbr=1&q=90&fit=max",
-        "https://blog.kakaocdn.net/dn/rB0Wj/btrapGjFjND/5zK1gXkq5Hsm24n4yE6lvk/img.jpg",
       ],
       menus: [
         {

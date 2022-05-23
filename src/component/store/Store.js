@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom"; 
 import "./Store.scss";
+
+import ModalPhoto from "../modal/ModalPhoto";
 
 import Stars from "../Stars";
 import Menus from "./StoreMenus";
@@ -16,9 +18,17 @@ function Store(props) {
   const storeDetail = storage.storeDetail[id - 1];
 
   const navigate = useNavigate();
+  
+  const [imageUrl, setImageUrl] = useState(null);
+  const [modalFlag, setModalFlag] = useState(false);
+  const changeModalFlag = function(image) { 
+    setImageUrl(image);
+    setModalFlag(true);
+  }
 
   return (
     <div className="Store">
+      <ModalPhoto imageUrl={imageUrl} modalFlag={modalFlag} func={setModalFlag} />
       <div className="Store-Header-Area">
         <div className="Exit">
           <img src={exit} alt="Exit-Icon" onClick={() => navigate(-1)} />
@@ -65,7 +75,7 @@ function Store(props) {
         <div className="Store-Dtail-Image">
           {storeDetail.images.map((image, i) => (
             <div key={i} className="ListItem-Slide">
-              <div className="ListItem-image-area">
+              <div className="ListItem-image-area" onClick={() => changeModalFlag(image)}>
                 <img src={image} alt="store-detail" />
               </div>
             </div>

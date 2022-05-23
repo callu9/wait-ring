@@ -1,0 +1,37 @@
+@import "../../style.scss";
+
+.Modal-Photo-Background {
+    z-index: 1;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba($color: $grayColor, $alpha: 0.3);
+}
+
+.Modal-Photo {
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    position: fixed;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 0 15px $grayColor;
+    transform: translate(-50%, -50%);
+}
+
+.Modal-Photo-Cancel {
+    right: 0px;
+    float: right;
+    margin: 5px 10px 0 0;
+}
+.Modal-Photo-Cancel > img {
+    width: 15px;
+}
+
+.Modal-Photo-area {
+    padding: 30px;
+}
+.Modal-Photo-area > img {
+    width: 100%;
+}

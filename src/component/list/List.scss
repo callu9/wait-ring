@@ -6,7 +6,7 @@
 }
 
 .keyword {
-  margin: 5px 10px 10px 0;
+  margin: 5px 5px 10px 0;
   padding: 3px 5px 3px 5px;
   min-height: 15px;
   border-radius: 5px;
@@ -93,6 +93,15 @@
 .star {
   width: 30%;
   margin-right: 5px;
+}
+
+.keyword-area {
+  max-width: 200px;
+  min-width: 112px;
+  width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .Slide-area {

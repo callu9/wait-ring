@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom"; 
 import "./Store.scss";
 
 import Stars from "../Stars";
@@ -9,19 +10,18 @@ import liked from "../../image/liked-full.png";
 
 import storage from "../../storage.js";
 
-function goBack() {
-  window.history.go(-1);
-}
 function Store(props) {
-  const params = window.location.href.split("/");
-  const id = params[params.length - 1];
+  const params = useLocation().pathname;
+  const id = params.split('/')[2];
   const storeDetail = storage.storeDetail[id - 1];
+
+  const navigate = useNavigate();
 
   return (
     <div className="Store">
       <div className="Store-Header-Area">
         <div className="Exit">
-          <img src={exit} alt="Exit-Icon" onClick={goBack} />
+          <img src={exit} alt="Exit-Icon" onClick={() => navigate(-1)} />
         </div>
         <div className="Store-Header-Detail">
           <div className="Store-Header-Detail-Left">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import iconNone from "../../image/waitring-none.png";
 import iconIncomplete from "../../image/waitring-incomplete.png";
@@ -20,7 +21,9 @@ const WaitNone = () => {
       <div className="MyWait-Body-Icon">
         <img src={iconNone} alt="icon-none" />
       </div>
-      <div className="MyWait-Body-Content-None">원격 웨이팅 신청한 매장이 없습니다</div>
+      <div className="MyWait-Body-Content-None">
+        원격 웨이팅 신청한 매장이 없습니다
+      </div>
     </div>
   );
 };
@@ -42,7 +45,9 @@ const WaitComplete = () => {
       <div className="MyWait-Body-Icon">
         <img src={iconComplete} alt="icon-none" />
       </div>
-      <div className="MyWait-Body-Content-Complete">원격 웨이팅 신청이 완료되었습니다</div>
+      <div className="MyWait-Body-Content-Complete">
+        원격 웨이팅 신청이 완료되었습니다
+      </div>
     </div>
   );
 };
@@ -53,8 +58,13 @@ const WaitTable = ({ data = {} }) => {
         <tbody>
           <tr className="MyWait-Table-row">
             <td className="left">매장명</td>
-            <td className="right" onClick={() => movePage(data.storeId)}>
-              {data.storeName}
+            <td className="right">
+              <Link
+                to={"/store/" + data.storeId}
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                {data.storeName}
+              </Link>
             </td>
           </tr>
           <tr className="MyWait-Table-row">
@@ -71,7 +81,8 @@ const WaitTable = ({ data = {} }) => {
           <tr className="MyWait-Table-row">
             <td className="left">인원</td>
             <td className="right">
-              성인 {data.adult}명{data.child > 0 ? " / 아동 " + data.child + "명" : ""}
+              성인 {data.adult}명
+              {data.child > 0 ? " / 아동 " + data.child + "명" : ""}
             </td>
           </tr>
         </tbody>
@@ -81,17 +92,16 @@ const WaitTable = ({ data = {} }) => {
           data={{
             lat: data.storeLocation.lat,
             lng: data.storeLocation.lng,
-            marker: { lat: data.storeLocation.lat, lng: data.storeLocation.lng },
+            marker: {
+              lat: data.storeLocation.lat,
+              lng: data.storeLocation.lng,
+            },
           }}
         />
       </div>
     </div>
   );
 };
-
-function movePage(id) {
-  document.location.pathname = "store/" + id;
-}
 
 const Wait = ({ data = {} }) => {
   if (data.status !== undefined) {

@@ -1,24 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+
 import "./Search.scss";
 import SearchBar from "../../component/SearchBar";
 
 function Search() {
   const [focusFlag, setFocusFlag] = useState(false);
+  const navigate = useNavigate();
 
   const initSearchBar = (fg) => {
     setFocusFlag(fg);
   };
 
   const searchKeyword = (keyword) => {
-    window.location.pathname = "search/" + keyword;
+    navigate("/search/" + keyword);
   };
 
   const best = [
     { id: 1, keyword: "고든램지" },
     { id: 2, keyword: "버거" },
-    { id: 3, keyword: "연돈" },
-    { id: 4, keyword: "해운대" },
-    { id: 5, keyword: "곱창" },
+    { id: 3, keyword: "함바그" },
+    { id: 4, keyword: "곱창" },
+    { id: 5, keyword: "영등포" },
   ];
 
   const bestStyle = function (id) {

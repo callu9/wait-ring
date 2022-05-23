@@ -7,7 +7,7 @@ export default function KakaoMapScript({ data }) {
       data.lat !== undefined && data.lng !== undefined
         ? new kakao.maps.LatLng(data.lat, data.lng)
         : new kakao.maps.LatLng(37.5666805, 126.9784147),
-    level: 5,
+    level: 6,
   };
   const map = new kakao.maps.Map(container, options);
   if (data.marker !== undefined) {

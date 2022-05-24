@@ -51,7 +51,7 @@ const SearchBar = (props) => {
     <tr key={r.id} className="Search-Recent-Keyword-Item">
       <td className="Search-Recent-Keyword">
         <Link
-          to={"search/" + r.content}
+          to={"/search/" + r.content}
           style={{ color: "inherit", textDecoration: "inherit" }}
         >
           {r.content}
@@ -64,7 +64,7 @@ const SearchBar = (props) => {
   ));
 
   return (
-    <>
+    <div className={props.focusFlag ? "Search-Bar-area-Hidden" : "Search-Bar-area"}>
       <div
         className={
           props.focusFlag ? "Search-Area-All-Hidden" : "Search-Area-All"
@@ -116,7 +116,7 @@ const SearchBar = (props) => {
           </table>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

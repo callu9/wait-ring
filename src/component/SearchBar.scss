@@ -7,6 +7,22 @@
   display: inline-block;
 }
 
+.Search-Bar-area-Hidden {
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.25s;
+}
+
+@-webkit-keyframes slideIn {
+  from {top: 500px; opacity: 0} 
+  to {top: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {top: 500px; opacity: 0} 
+  to {top: 0; opacity: 1}
+}
+
+
 .Search-Area {
   background-color: $lightGrayColor;
   border-radius: 20px;
@@ -16,7 +32,6 @@
 
 .Search-Area-Hidden {
   @extend .Search-Area;
-  margin-top: 15px;
   width: calc(100% - 40px);
 }
 
@@ -42,7 +57,7 @@
   float: right;
   width: 25px;
   text-align: right;
-  margin-top: 30px;
+  margin-top: 15px;
   font-weight: 400;
   font-size: 9pt;
   color: #8c8c8c;

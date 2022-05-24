@@ -1,16 +1,16 @@
 .Menu {
-  z-index: 1;
-  position: fixed;
-  bottom: 0px;
   left: 0;
   right: 0;
-  justify-content: center;
+  bottom: 0;
+  z-index: 1;
   width: 100%;
-  min-height: 55px;
   height: 10%;
-  display: flex;
+  min-height: 55px;
+  justify-content: center;
   background-color: white;
   box-shadow: 0 -1px 10px 3px #cecece;
+  position: fixed;
+  display: flex;
 }
 
 .Menu > * {

@@ -2,6 +2,7 @@ const storage = {
   user: {
     id: "user01",
     nickname: "유저01",
+    newAlarm: 1,
     wait: 6,
     reserve: 2,
     review: 4,
@@ -15,6 +16,7 @@ const storage = {
       imageUrl:
         "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F01%2FHypebeast-check-gordon-ramsay-burger-korean-restaurant-info-22.jpg?w=1600&cbr=1&q=90&fit=max",
       review: "4.8",
+      liked: 1326,
       keyword: ["양식", "버거"],
       waitingFlag: true,
       reservationFlag: false,
@@ -25,6 +27,7 @@ const storage = {
       areaDong: "영등포동",
       imageUrl: "https://www.withbuyer.com/news/photo/202101/20946_11658_1837.jpg",
       review: "4.3",
+      liked: 26,
       keyword: ["일식", "라멘"],
       waitingFlag: true,
       reservationFlag: true,
@@ -35,6 +38,7 @@ const storage = {
       areaDong: "상계동",
       imageUrl: "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
       review: "4.0",
+      liked: 27,
       keyword: ["일식", "함바그"],
       waitingFlag: true,
       reservationFlag: true,
@@ -43,8 +47,10 @@ const storage = {
       id: 4,
       name: "별미곱창",
       areaDong: "방이동",
-      imageUrl: "https://mp-seoul-image-production-s3.mangoplate.com/209802/83465_1631076696663_63542?fit=around|512:512&crop=512:512;*,*&output-format=jpg&output-quality=80",
+      imageUrl:
+        "https://mp-seoul-image-production-s3.mangoplate.com/209802/83465_1631076696663_63542?fit=around|512:512&crop=512:512;*,*&output-format=jpg&output-quality=80",
       review: "4.2",
+      liked: 26,
       keyword: ["한식", "곱창", "술안주"],
       waitingFlag: false,
       reservationFlag: false,
@@ -53,8 +59,10 @@ const storage = {
       id: 5,
       name: "우미노미",
       areaDong: "당산동",
-      imageUrl: "https://mp-seoul-image-production-s3.mangoplate.com/sources/web/restaurants/405162/894765_1640500466267",
+      imageUrl:
+        "https://mp-seoul-image-production-s3.mangoplate.com/sources/web/restaurants/405162/894765_1640500466267",
       review: "4.7",
+      liked: 26,
       keyword: ["일식", "돈부리"],
       waitingFlag: false,
       reservationFlag: false,
@@ -65,6 +73,7 @@ const storage = {
       areaDong: "상계동",
       imageUrl: "https://t1.daumcdn.net/cfile/tistory/252170375909AB6931",
       review: "4.3",
+      liked: 26,
       keyword: ["일식", "키워드"],
       waitingFlag: false,
       reservationFlag: false,
@@ -247,9 +256,9 @@ const storage = {
       name: "후쿠오카함바그 롯데백화점노원",
       areaDong: "상계동",
       areaDetail: "서울특별시 노원구 동일로 1414",
-      review: 4.3,
+      review: "4.0",
       reviewNum: 2626,
-      liked: 26,
+      liked: 27,
       keywords: ["깨끗한", "일식", "라멘"],
       openTime: "10:00",
       closeTime: "20:30",
@@ -346,7 +355,8 @@ const storage = {
           price: 15000,
           detail:
             "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
-          imageUrl: "https://mp-seoul-image-production-s3.mangoplate.com/2091186_1640675023029693.jpg",
+          imageUrl:
+            "https://mp-seoul-image-production-s3.mangoplate.com/2091186_1640675023029693.jpg",
         },
         {
           id: 3,
@@ -417,7 +427,8 @@ const storage = {
           price: 15000,
           detail:
             "메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. 메뉴 설명입니다. ",
-          imageUrl: "https://mp-seoul-image-production-s3.mangoplate.com/405162/513273_1597229296822_10244",
+          imageUrl:
+            "https://mp-seoul-image-production-s3.mangoplate.com/405162/513273_1597229296822_10244",
         },
         {
           id: 3,

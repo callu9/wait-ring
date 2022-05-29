@@ -12,9 +12,11 @@ import ReviewListSlide from "../../component/review/ReviewListSlide.js";
 import storage from "../../storage.js";
 import Map from "../../component/map/Map";
 const Main = () => {
-  const [userLocation, setUserLocation] = useState({});
-  const [alarmFlag, setAlarmFlag] = useState(false);
   const user = storage.user;
+  const [userLocation, setUserLocation] = useState({});
+  const [alarmFlag, setAlarmFlag] = useState(
+    user.id != undefined && user.newAlarm > 0 ? true : false
+  );
 
   useEffect(() => {
     if (user.id !== undefined && navigator.geolocation) {
@@ -23,8 +25,7 @@ const Main = () => {
         setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
       });
     }
-    return () => {
-    };
+    return () => {};
   }, []);
 
   const MainMap = ({ user: {} }) => {

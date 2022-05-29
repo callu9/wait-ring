@@ -75,6 +75,22 @@
   margin: 15px 0 15px 0;
 }
 
+.Search-Filter-Sort-Area > div {
+  display: inline-block;
+}
+
+.Search-Result-Sort-Area {
+  float: right;
+}
+
+select,
+option {
+  min-height: 15px;
+  margin: 5px 0px 10px 10px;
+  font-family: "noto Sans KR", sans-serif;
+  font-size: 10pt;
+}
+
 .keyword-activated {
   text-align: center;
   margin: 5px 10px 10px 0;

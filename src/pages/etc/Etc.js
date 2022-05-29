@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./Etc.scss";
 
@@ -13,15 +13,22 @@ import qnaIcon from "../../image/qna.png";
 import storage from "../../storage.js";
 
 function Etc(props) {
+  const navigate = useNavigate();
+
   let user = storage.user;
   let userFlag = user === undefined ? false : true;
+
+  function movePage(path) {
+    navigate(path);
+  }
+
   return (
     <div className="Etc">
       <div className="Setting">
         <p className="Setting-icon-area">
-          <Link to="/setting">
-            <img src={settingIcon} alt="Setting-icon" />
-          </Link>
+          {/* <Link to="/setting"> */}
+          <img src={settingIcon} alt="Setting-icon" />
+          {/* </Link> */}
         </p>
       </div>
       <div className="Header-etc">
@@ -78,7 +85,7 @@ function Etc(props) {
               </td>
             </tr>
             {userFlag ? (
-              <tr className="Etc-List-Item">
+              <tr className="Etc-List-Item" onClick={() => movePage("my-wait")}>
                 <td>
                   <p>
                     <img src={myWaitIcon} alt="myWaitIcon" />
@@ -90,7 +97,7 @@ function Etc(props) {
               <></>
             )}
             {userFlag ? (
-              <tr className="Etc-List-Item">
+              <tr className="Etc-List-Item" onClick={() => movePage("review")}>
                 <td>
                   <p>
                     <img src={reviewIcon} alt="reviewIcon" />

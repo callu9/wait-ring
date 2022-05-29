@@ -557,6 +557,9 @@ const storage = {
     child: 0,
     status: 1,
   },
+  EtcWaitingDetail: [],
+  EtcReservationDetail: [],
+  EtcReviewDetail: [],
 };
 
 export default storage;

@@ -1,121 +1,147 @@
 @import "../../style.scss";
 
 .Etc {
-    margin: 25px;
-    padding-bottom: 55px;
+  margin: 25px;
+  padding-bottom: 55px;
 }
 
 .Etc > * {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 //
 // 환경설정 아이콘
 //
 .Setting-icon-area {
-    text-align: right;
-    /* margin: 27px 25px 0 25px; */
+  text-align: right;
+  /* margin: 27px 25px 0 25px; */
 }
 
 .Setting-icon-area img {
-    max-width: 55px;
-    width: 10%;
+  max-width: 55px;
+  width: 10%;
 }
 
 //
 // 헤더 폰트 설정
 //
 .Header-etc > * {
-    display: inline;
-    font-size: $header-large-font-size;
-    font-weight: 500;
+  display: inline;
+  font-size: $header-large-font-size;
+  font-weight: 500;
 }
 
 .Header-nickname {
-    display: inline;
-    font-weight: $header-large-font-weight;
-    color: $orangeColor;
+  display: inline;
+  font-weight: $header-large-font-weight;
+  color: $orangeColor;
 }
 
 //
 // 회원 활동 요약
 //
 .Activity-table {
-    margin-top: 35px;
-    margin-bottom: 35px;
-    table-layout: fixed;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  table-layout: fixed;
 }
 
 .Activity-area > * {
-    text-align: center;
+  text-align: center;
 }
 
 .Activity-Item-Right {
-    border-right: 1px solid $lightGrayColor;
-    border-top: none;
-    border-bottom: none;
+  border-right: 1px solid $lightGrayColor;
+  border-top: none;
+  border-bottom: none;
 }
 .Activity-Item-Left {
-    border-top: none;
-    border-bottom: none;
+  border-top: none;
+  border-bottom: none;
 }
 
 .Activity-Gray {
-    color: $grayColor;
-    font-size: 9pt;
+  color: $grayColor;
+  font-size: 9pt;
 }
 
 .Activity-LightOrange {
-    color: $lightOrangeColor;
-    font-weight: 700;
-    font-size: 12pt;
+  color: $lightOrangeColor;
+  font-weight: 700;
+  font-size: 12pt;
 }
 .Activity-Orange {
-    color: $orangeColor;
-    font-weight: 700;
-    font-size: 12pt;
+  color: $orangeColor;
+  font-weight: 700;
+  font-size: 12pt;
 }
 
 //
 // 메뉴 목록
 //
 .Etc-List-area {
-    margin-top: 25px;
-    margin-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .Etc-List-Item > td * {
-    display: inline-block;
-    vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .Etc-List-Item img {
-    width: 25px;
-    margin: 5px 25px 5px 0;
+  width: 25px;
+  margin: 5px 25px 5px 0;
 }
 
 //
 // 원격 웨이팅 접수 방법 팝업 버튼
 //
 .How-To-Wait {
-    background-color: $lightOrangeColor;
-    border-radius: 20px;
+  background-color: $lightOrangeColor;
+  border-radius: 20px;
 }
 
 .How-To-Wait > * {
-    display: inline-block;
-    color: white;
-    font-size: 15pt;
-    font-weight: $header-large-font-weight;
+  display: inline-block;
+  color: white;
+  font-size: 15pt;
+  font-weight: $header-large-font-weight;
 }
 
 .questionMark {
-    color: $lightOrangeColor;
-    background-color: white;
-    border-radius: 100%;
-    width: 15%;
-    height: 15%;
-    max-width: 30px;
-    max-height: 30px;
-    text-align: center;
-    margin: 15px;
+  color: $lightOrangeColor;
+  background-color: white;
+  border-radius: 100%;
+  width: 15%;
+  height: 15%;
+  max-width: 30px;
+  max-height: 30px;
+  text-align: center;
+  margin: 15px;
+}
+
+// 나의 리뷰 내역
+
+.Etc-Review {
+  margin: 25px;
+  margin-top: 0;
+  padding-bottom: 10vh;
+}
+
+.Store-Review-Name {
+  font-size: 12pt;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Store-Review-Image {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.Store-Review-Image > img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0px 5px 3px #cecece;
 }

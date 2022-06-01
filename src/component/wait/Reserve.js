@@ -10,7 +10,11 @@ import Map from "../../component/map/Map";
 const ReserveMore = () => {
   return (
     <div className="More">
-      <div>지난 예약 내역 ＞</div>
+      <div>
+        <Link to="/etc/my-wait/reserve" style={{ color: "inherit", textDecoration: "inherit" }}>
+          지난 예약 내역 ＞
+        </Link>
+      </div>
     </div>
   );
 };
@@ -31,9 +35,7 @@ const ReserveIncomplete = () => {
       <div className="MyWait-Body-Icon">
         <img src={iconIncomplete} alt="icon-none" />
       </div>
-      <div className="MyWait-Body-Content-Incomplete">
-        해당 매장에서 예약 신청을 확인 중입니다
-      </div>
+      <div className="MyWait-Body-Content-Incomplete">해당 매장에서 예약 신청을 확인 중입니다</div>
     </div>
   );
 };
@@ -66,8 +68,7 @@ const ReserveTable = ({ data = {} }) => {
           <tr className="MyWait-Table-row">
             <td className="left">인원</td>
             <td className="right">
-              성인 {data.adult}명
-              {data.child > 0 ? " / 아동 " + data.child + "명" : ""}
+              성인 {data.adult}명{data.child > 0 ? " / 아동 " + data.child + "명" : ""}
             </td>
           </tr>
           <tr className="MyWait-Table-row">

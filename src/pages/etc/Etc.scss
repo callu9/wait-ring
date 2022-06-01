@@ -2,7 +2,7 @@
 
 .Etc {
   margin: 25px;
-  padding-bottom: 55px;
+  padding-bottom: 10vh;
 }
 
 .Etc > * {
@@ -120,8 +120,53 @@
   margin: 15px;
 }
 
-// 나의 리뷰 내역
+//
+// 나의 웨이팅/예약 내역
+//
+.Etc-MyWait-Body-Content {
+  margin-top: 15px;
+}
+.MyWait-Table-Etc {
+  border-top: 1px solid $lightGrayColor;
+  border-bottom: 1px solid $lightGrayColor;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
 
+.MyWait-Table-row-first > td {
+  padding-top: 15px;
+  border: none;
+}
+
+.MyWait-Table-row-last > td {
+  padding-bottom: 15px;
+  border: none;
+}
+
+.More-Etc {
+  text-align: center;
+}
+.More-Etc > div {
+  margin: 10px 0 5px 0;
+  padding: 3px 0 3px 0;
+  box-shadow: 0 0 3px 2px #cecece;
+  border-radius: 25px;
+  text-align: center;
+  display: inline-block;
+}
+.One-Button {
+  width: 100%;
+}
+.Two-Buttons {
+  width: 40vw;
+}
+.Two-Buttons:first-child {
+  margin-right: 5vw;
+}
+
+//
+// 나의 리뷰 내역
+//
 .Etc-Review {
   margin: 25px;
   margin-top: 0;

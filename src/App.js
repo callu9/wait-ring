@@ -27,7 +27,7 @@ class App extends Component {
           <Route path="/my-wait" element={<MyWait />} />
           <Route path="/liked" element={<Liked />} />
           <Route path="/etc" element={<Etc />} />
-          <Route path="/etc/my-wait" element={<EtcMyWait />} />
+          <Route path="/etc/my-wait/*" element={<EtcMyWait />} />
           <Route path="/etc/review" element={<EtcReview />} />
           <Route path="/alarm" element={<Alarm />} />
           <Route path="/store/*" element={<Store />} />

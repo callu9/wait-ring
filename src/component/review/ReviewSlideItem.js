@@ -2,19 +2,15 @@ import React from "react";
 import "./Review.scss";
 import star from "../../image/star.png";
 
-function makeNameShort(name) {
-  return name.substring(0, 6)+"...";
-};
-
 function makeContentShort(content) {
-  return content.substring(0, 25)+"...";
-};
+  return content.substring(0, 25) + "...";
+}
 
-const ReviewSlideItem = ({name, areaDong, review, reviewContent, nickname}) => (
+const ReviewSlideItem = ({ name, areaDong, review, reviewContent, nickname }) => (
   <>
-    <div className="Review-Item" >
+    <div className="Review-Item">
       <div className="Item-header">
-        <div className="Item-header-name">{makeNameShort(name)}</div>
+        <div className="Item-header-name">{name}</div>
         <div className="Item-header-star">
           <div>
             <img src={star} className="star" alt="star" />
@@ -31,6 +27,6 @@ const ReviewSlideItem = ({name, areaDong, review, reviewContent, nickname}) => (
       <div className="Item-nickname">{nickname}</div>
     </div>
   </>
-  );
+);
 
 export default ReviewSlideItem;

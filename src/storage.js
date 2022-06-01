@@ -559,7 +559,41 @@ const storage = {
   },
   EtcWaitingDetail: [],
   EtcReservationDetail: [],
-  EtcReviewDetail: [],
+  EtcReviewDetail: [
+    {
+      id: 1,
+      storeId: 1,
+      storeName: "고든램지버거",
+      areaDong: "신천동",
+      review: "4.8",
+      reviewContent: "리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. 리뷰입니다. ",
+      nickname: "유저01",
+      timestamp: "1시간 전",
+      imageUrl: ["https://dimg.donga.com/wps/NEWS/IMAGE/2022/01/06/111127140.2.jpg"],
+    },
+    {
+      id: 2,
+      storeId: 2,
+      storeName: "호랑이식당 롯데영등포점",
+      areaDong: "영등포동",
+      review: "4.1",
+      reviewContent:
+        "리뷰인데용. 리뷰인데용. 리뷰인데용. 리뷰인데용. 리뷰인데용. 리뷰인데용. 리뷰인데용. ",
+      nickname: "유저01",
+      timestamp: "1일 전",
+    },
+    {
+      id: 3,
+      storeId: 3,
+      storeName: "후쿠오카함바그 롯데백화점노원",
+      areaDong: "상계동",
+      review: "3.6",
+      reviewContent:
+        "내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 내용입니다용 ",
+      nickname: "유저01",
+      timestamp: "3일 전",
+    },
+  ],
 };
 
 export default storage;

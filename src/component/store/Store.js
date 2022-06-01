@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom"; 
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Store.scss";
 
 import ModalPhoto from "../modal/ModalPhoto";
@@ -14,17 +14,17 @@ import storage from "../../storage.js";
 
 function Store(props) {
   const params = useLocation().pathname;
-  const id = params.split('/')[2];
+  const id = params.split("/")[2];
   const storeDetail = storage.storeDetail[id - 1];
 
   const navigate = useNavigate();
-  
+
   const [imageUrl, setImageUrl] = useState(null);
   const [modalFlag, setModalFlag] = useState(false);
-  const changeModalFlag = function(image) { 
+  const changeModalFlag = function (image) {
     setImageUrl(image);
     setModalFlag(true);
-  }
+  };
 
   return (
     <div className="Store">
@@ -72,7 +72,7 @@ function Store(props) {
             </tr>
           </tbody>
         </table>
-        <div className="Store-Dtail-Image">
+        <div className="Store-Detail-Image">
           {storeDetail.images.map((image, i) => (
             <div key={i} className="ListItem-Slide">
               <div className="ListItem-image-area" onClick={() => changeModalFlag(image)}>

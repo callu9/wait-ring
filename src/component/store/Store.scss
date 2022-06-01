@@ -89,12 +89,12 @@ strong {
   border: none;
 }
 
-.Store-Dtail-Image {
+.Store-Detail-Image {
   overflow-x: auto;
   white-space: nowrap;
 }
 
-.Store-Dtail-Image > .ListItem-Slide {
+.Store-Detail-Image > .ListItem-Slide {
   display: inline-block;
   margin: 5px;
 }
@@ -208,4 +208,5 @@ strong {
 
 .Store-Review-Etc {
   color: $grayColor;
+  font-size: 10pt;
 }

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./Store.scss";
 
 import ModalPhoto from "../modal/ModalPhoto";
+import Alert from "../Alert";
 
 import Stars from "../Stars";
 import Menus from "./StoreMenus";
@@ -25,6 +26,16 @@ function Store(props) {
     setImageUrl(image);
     setModalFlag(true);
   };
+  
+  const [alertFg, setAlertFg] = useState(false);
+  const sleep = (ms) => {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+  }
+  function copyText(txt) {
+    setAlertFg(true);
+    navigator.clipboard.writeText(txt);
+    sleep(3000).then(() => setAlertFg(false));
+  }
 
   return (
     <div className="Store">
@@ -36,9 +47,10 @@ function Store(props) {
         <div className="Store-Header-Detail">
           <div className="Store-Header-Detail-Left">
             <div className="Store-name">{storeDetail.name}</div>
-            <div className="Store-location">
+            <div className="Store-location" onClick={()=>copyText(storeDetail.areaDetail)}>
               {storeDetail.areaDetail} ({storeDetail.areaDong})
             </div>
+            {alertFg && <Alert className="alert" />}
             <div className="Store-reviews">
               <Stars review={storeDetail.review} />
               <div>

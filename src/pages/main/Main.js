@@ -15,7 +15,7 @@ const Main = () => {
   const user = storage.user;
   const [userLocation, setUserLocation] = useState({});
   const [alarmFlag, setAlarmFlag] = useState(
-    user.id != undefined && user.newAlarm > 0 ? true : false
+    user.id !== undefined && user.newAlarm > 0 ? true : false
   );
 
   useEffect(() => {

@@ -1,0 +1,38 @@
+@import "../style.scss";
+
+.alert {
+    top: 70vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 3s;
+}
+
+.alert-msg {
+    display: inline-block;
+    opacity: 0.6;
+    color: white;
+    background-color: $grayColor;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0 }
+    30%  { opacity: 1 }
+    70%  { opacity: 1 }
+    100%   { opacity: 0 }
+  }
+
+@-webkit-keyframes fadeIn {
+    0%   { opacity: 0 }
+    30%  { opacity: 1 }
+    70%  { opacity: 1 }
+    100%   { opacity: 0 }
+  }

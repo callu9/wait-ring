@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Wait from "../../component/wait/Wait.js";
 import Reserve from "../../component/wait/Reserve.js";
+import { useLocation } from "react-router-dom";
 
 import "./MyWait.scss";
 import storage from "../../storage.js";
 
 function MyWait() {
-  const [waitFlag, setWaitFlag] = useState(true);
+  const tabFlag = useLocation().pathname.includes("/reserve") ? false : true;
+  const [waitFlag, setWaitFlag] = useState(tabFlag);
   function changeTab() {
     setWaitFlag(!waitFlag);
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Alarm.scss";
 import noticeIcon from "../../image/notice-none.png";
@@ -7,48 +8,70 @@ import noticeIconNew from "../../image/notice-new.png";
 const data = [
   {
     id: 1,
-    content: "고든램지 버거 예약 완료",
+    wait: 0,
+    reserve: 1,
+    storeId: 1,
+    storName: "고든램지버거",
     datetime: "2022.00.00(월) 00:00",
     people: "성인 0명",
     unread: true,
   },
   {
     id: 2,
-    content: "고든램지 버거 입장 안내",
+    wait: 2,
+    reserve: 0,
+    storeId: 1,
+    storName: "고든램지버거",
     datetime: "2022.00.00(월) 00:00",
     people: "성인 0명",
     unread: false,
   },
   {
     id: 3,
-    content: "고든램지 버거 원격 웨이팅 등록",
+    wait: 1,
+    reserve: 0,
+    storeId: 1,
+    storName: "고든램지버거",
     datetime: "2022.00.00(월) 00:00",
     people: "성인 0명",
     unread: false,
   },
 ];
 
-const list = data.map((item) => (
-  <tr key={item.id}>
-    <td className="Alarm-List-Item">
-      <div className="Alarm-List-Item-img">
-        {item.unread ? (
-          <img src={noticeIconNew} className="notice-icon" alt="notice-icon" />
-        ) : (
-          <img src={noticeIcon} className="notice-icon" alt="notice-icon" />
-        )}
-      </div>
-      <div className="Alarm-List-Item-body">
-        <div className="Alarm-List-Item-content">{item.content}</div>
-        <div className="Alarm-List-Item-foot">
-          {item.datetime} {item.people}
-        </div>
-      </div>
-    </td>
-  </tr>
-));
+export default function Alarm(props) {
+  const navigate = useNavigate();
 
-function Alarm(props) {
+  function makeContent(wait, reserve, storeName) {
+    let alarmStr = "";
+    if(reserve>0)
+    alarmStr = "예약 완료";
+    else {
+      if(wait===1) alarmStr = "원격 웨이팅 등록";
+      else if(wait===2) alarmStr = "입장 안내";
+    }
+    return storeName+" "+alarmStr;
+  }
+  
+  const list = data.map((item) => (
+    <tr key={item.id}>
+      <td className="Alarm-List-Item">
+        <div className="Alarm-List-Item-img">
+          {item.unread ? (
+            <img src={noticeIconNew} className="notice-icon" alt="notice-icon" />
+          ) : (
+            <img src={noticeIcon} className="notice-icon" alt="notice-icon" />
+          )}
+        </div>
+        <div className="Alarm-List-Item-body">
+          <div className="Alarm-List-Item-content" onClick={() => navigate(item.reserve>0?"/my-wait/reserve":"/my-wait")}>{makeContent(item.wait, item.reserve, item.storName)}</div>
+          <div className="Alarm-List-Item-foot">
+            {item.datetime} {item.people}
+          </div>
+        </div>
+      </td>
+    </tr>
+  ));
+  
   return (
     <div className="Alarm">
       <div className="Header">
@@ -62,5 +85,3 @@ function Alarm(props) {
     </div>
   );
 }
-
-export default Alarm;

@@ -3,10 +3,10 @@ const storage = {
     id: "user01",
     nickname: "유저01",
     newAlarm: 1,
-    wait: 6,
+    wait: 3,
     reserve: 2,
-    review: 4,
-    point: 2626,
+    review: 3,
+    point: 860,
   },
   storeData: [
     {

@@ -159,9 +159,10 @@
 }
 .Two-Buttons {
   width: 40vw;
+  min-width: 100px;
 }
 .Two-Buttons:first-child {
-  margin-right: 5vw;
+  margin-right: 3vw;
 }
 
 //

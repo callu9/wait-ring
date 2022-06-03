@@ -590,9 +590,9 @@ const storage = {
       status: 1,
     },
     {
-      id: 4,
+      id: 3,
       storeName: "별미곱창",
-      storeId: 1,
+      storeId: 4,
       waitingNum: 15,
       adult: 4,
       child: 0,

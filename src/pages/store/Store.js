@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./Store.scss";
 
 import ModalPhoto from "../../component/modal/ModalPhoto";
+import ModalWait from "../../component/modal/ModalWait";
 import Alert from "../../component/Alert";
 
 import Stars from "../../component/Stars";
@@ -22,12 +23,14 @@ function Store(props) {
   const navigate = useNavigate();
 
   const [imageUrl, setImageUrl] = useState(null);
-  const [modalFlag, setModalFlag] = useState(false);
+  const [imgModal, setImgModal] = useState(false);
   const changeModalFlag = function (image) {
     setImageUrl(image);
-    setModalFlag(true);
+    setImgModal(true);
   };
-  
+
+  const [waitModal, setWaitModal] = useState(false);
+
   const [alertFg, setAlertFg] = useState(false);
   const sleep = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms))
@@ -40,7 +43,8 @@ function Store(props) {
 
   return (
     <div className="Store">
-      <ModalPhoto imageUrl={imageUrl} modalFlag={modalFlag} func={setModalFlag} />
+      <ModalPhoto imageUrl={imageUrl} modalFlag={imgModal} func={setImgModal} />
+      <ModalWait modalFlag={waitModal} func={setWaitModal} />
       <div className="Store-Header-Area">
         <div className="Exit">
           <img src={exit} alt="Exit-Icon" onClick={() => navigate(-1)} />
@@ -113,7 +117,7 @@ function Store(props) {
           <div>리뷰 더보기 ＞</div>
         </div>
       </div>
-      <Tab wait={storeDetail.waitingFlag} reserve={storeDetail.reservationFlag}  />
+      <Tab wait={storeDetail.waitingFlag} reserve={storeDetail.reservationFlag} func1={setWaitModal}  />
     </div>
   );
 }

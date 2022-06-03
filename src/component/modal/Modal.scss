@@ -1,37 +1,99 @@
 @import "../../style.scss";
 
-.Modal-Photo-Background {
-    z-index: 1;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-color: rgba($color: $grayColor, $alpha: 0.3);
+.Modal-Photo-Background,
+.Modal-Wait-Background,
+.Modal-Reserve-Background {
+  z-index: 2;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba($color: $grayColor, $alpha: 0.3);
 }
+
+.Modal-Cancel {
+  right: 0px;
+  float: right;
+  margin: 5px 10px 0 0;
+}
+.Modal-Cancel > img {
+  width: 15px;
+}
+
+//
+// ModalPhoto (이미지 클릭 시 크게 보기)
+//
 
 .Modal-Photo {
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    position: fixed;
-    border-radius: 15px;
-    background-color: white;
-    box-shadow: 0 0 15px $grayColor;
-    transform: translate(-50%, -50%);
-}
-
-.Modal-Photo-Cancel {
-    right: 0px;
-    float: right;
-    margin: 5px 10px 0 0;
-}
-.Modal-Photo-Cancel > img {
-    width: 15px;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  position: fixed;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 0 15px $grayColor;
+  transform: translate(-50%, -50%);
 }
 
 .Modal-Photo-area {
-    padding: 30px;
+  padding: 30px;
 }
 .Modal-Photo-area > img {
-    width: 100%;
+  width: 100%;
 }
+
+//
+// ModalWait
+//
+.Modal-Wait {
+  @extend .Modal-Photo;
+  top: 45%;
+  height: 45vh;
+  min-height: 400px;
+  text-align: center;
+}
+
+.Modal-Notice {
+    margin-top: 12vw;
+    color: $grayColor;
+}
+
+.Modal-Wait-People {
+    margin: 25px;
+}
+.Modal-Wait-People > div {
+    margin-bottom: 25px;
+}
+.Modal-Wait-People .left {
+    font-weight: 500;
+}
+
+.minus, .plus {
+    display: inline-block;
+    margin: 5px 10px 5px 10px;
+    padding: 3px 13px 5px 13px;
+    border: 2px solid $lightGrayColor;
+    border-radius: 25px;
+    font-size: 15pt;
+}
+
+.Modal-Wait-Button {
+    left: 30%;
+    right: 30%;
+    bottom: 10%;
+    position: fixed;
+    text-align: center;
+    background-color: $lightOrangeColor;
+    padding: 10px 15px 10px 15px;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+}
+.Modal-Wait-Button-active {
+    @extend .Modal-Wait-Button;
+    background-color: $orangeColor;
+}
+
+//
+// ModalReserve
+//

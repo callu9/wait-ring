@@ -12,7 +12,7 @@ const ModalPhoto = (props) => {
       {props.modalFlag && (
         <div className="Modal-Photo-Background">
           <div className="Modal-Photo">
-            <div className="Modal-Photo-Cancel">
+            <div className="Modal-Cancel">
               <img
                 src={cancel}
                 className="Modal-Photo-Cancel-Image"

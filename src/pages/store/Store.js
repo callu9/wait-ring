@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Store.scss";
 
-import ModalPhoto from "../modal/ModalPhoto";
-import Alert from "../Alert";
+import ModalPhoto from "../../component/modal/ModalPhoto";
+import Alert from "../../component/Alert";
 
-import Stars from "../Stars";
-import Menus from "./StoreMenus";
-import Reviews from "./StoreReviews";
+import Stars from "../../component/Stars";
+import Menus from "../../component/store/StoreMenus";
+import Reviews from "../../component/store/StoreReviews";
+import Tab from "../../component/store/StoreTab";
 import exit from "../../image/exit.png";
 import liked from "../../image/liked-full.png";
 
@@ -112,7 +113,7 @@ function Store(props) {
           <div>리뷰 더보기 ＞</div>
         </div>
       </div>
-      <div className="Store-Status"></div>
+      <Tab wait={storeDetail.waitingFlag} reserve={storeDetail.reservationFlag}  />
     </div>
   );
 }

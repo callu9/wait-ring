@@ -14,7 +14,7 @@ import EtcReview from "./pages/etc/EtcReview";
 
 import Alarm from "./pages/alarm/Alarm";
 import SearchResult from "./pages/search/SearchResult";
-import Store from "./component/store/Store";
+import Store from "./pages/store/Store";
 import MenuBar from "./component/MenuBar";
 
 class App extends Component {

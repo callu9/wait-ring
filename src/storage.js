@@ -178,6 +178,8 @@ const storage = {
           timestamp: "1시간 전",
         },
       ],
+      waitingFlag: true,
+      reservationFlag: false,
     },
     {
       id: 2,
@@ -250,6 +252,8 @@ const storage = {
           timestamp: "1시간 전",
         },
       ],
+      waitingFlag: true,
+      reservationFlag: true,
     },
     {
       id: 3,
@@ -321,6 +325,8 @@ const storage = {
           timestamp: "1시간 전",
         },
       ],
+      waitingFlag: true,
+      reservationFlag: true,
     },
     {
       id: 4,
@@ -393,6 +399,8 @@ const storage = {
           timestamp: "1시간 전",
         },
       ],
+      waitingFlag: false,
+      reservationFlag: false,
     },
     {
       id: 5,
@@ -465,6 +473,8 @@ const storage = {
           timestamp: "1시간 전",
         },
       ],
+      waitingFlag: false,
+      reservationFlag: false,
     },
     {
       id: 6,
@@ -536,6 +546,8 @@ const storage = {
           timestamp: "1시간 전",
         },
       ],
+      waitingFlag: false,
+      reservationFlag: false,
     },
   ],
   waitingData: {

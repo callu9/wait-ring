@@ -4,6 +4,9 @@ export default function StoreTab(props) {
   const changeWaitModalFlag = function () {
     props.func1(true);
   };
+  const changeReserveModalFlag = function () {
+    props.func2(true);
+  };
 
   return (
     <div className="Store-Tab">
@@ -15,7 +18,9 @@ export default function StoreTab(props) {
         <div className="Store-Tab-Wait-None">웨이팅 불가</div>
       )}
       {props.reserve ? (
-        <div className="Store-Tab-Reserve">예약 가능</div>
+        <div className="Store-Tab-Reserve" onClick={changeReserveModalFlag}>
+          예약 가능
+        </div>
       ) : (
         <div className="Store-Tab-Reserve-None">예약 불가</div>
       )}

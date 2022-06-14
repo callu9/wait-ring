@@ -54,46 +54,54 @@
 }
 
 .Modal-Notice {
-    margin-top: 12vw;
-    color: $grayColor;
+  margin-top: 12vw;
+  color: $grayColor;
 }
 
 .Modal-Wait-People {
-    margin: 25px;
+  margin: 25px;
 }
 .Modal-Wait-People > div {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 .Modal-Wait-People .left {
-    font-weight: 500;
+  font-weight: 500;
 }
 
-.minus, .plus {
-    display: inline-block;
-    margin: 5px 10px 5px 10px;
-    padding: 3px 13px 5px 13px;
-    border: 2px solid $lightGrayColor;
-    border-radius: 25px;
-    font-size: 15pt;
+.minus,
+.plus {
+  display: inline-block;
+  margin: 5px 10px 5px 10px;
+  padding: 3px 13px 5px 13px;
+  border: 2px solid $lightGrayColor;
+  border-radius: 25px;
+  font-size: 15pt;
 }
 
 .Modal-Wait-Button {
-    left: 30%;
-    right: 30%;
-    bottom: 10%;
-    position: fixed;
-    text-align: center;
-    background-color: $lightOrangeColor;
-    padding: 10px 15px 10px 15px;
-    border-radius: 15px;
-    color: white;
-    font-weight: 500;
+  left: 30%;
+  right: 30%;
+  bottom: 10%;
+  position: fixed;
+  text-align: center;
+  background-color: $lightOrangeColor;
+  padding: 10px 15px 10px 15px;
+  border-radius: 15px;
+  color: white;
+  font-weight: 500;
 }
 .Modal-Wait-Button-active {
-    @extend .Modal-Wait-Button;
-    background-color: $orangeColor;
+  @extend .Modal-Wait-Button;
+  background-color: $orangeColor;
 }
 
 //
 // ModalReserve
 //
+.Modal-Reserve {
+  @extend .Modal-Photo;
+  top: 47%;
+  height: 60vh;
+  min-height: 400px;
+  text-align: center;
+}

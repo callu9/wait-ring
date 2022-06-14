@@ -16,6 +16,7 @@ import Alarm from "./pages/alarm/Alarm";
 import SearchResult from "./pages/search/SearchResult";
 import Store from "./pages/store/Store";
 import MenuBar from "./component/MenuBar";
+import Calendar from "./component/Calendar";
 
 class App extends Component {
   render() {
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path="/alarm" element={<Alarm />} />
           <Route path="/store/*" element={<Store />} />
           <Route path="/search/:keyword" element={<SearchResult />} />
+          <Route path="/cal" element={<Calendar />} />
         </Routes>
         <MenuBar />
       </Router>

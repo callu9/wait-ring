@@ -4,6 +4,7 @@ import "./Store.scss";
 
 import ModalPhoto from "../../component/modal/ModalPhoto";
 import ModalWait from "../../component/modal/ModalWait";
+import ModalReserve from "../../component/modal/ModalReserve";
 import Alert from "../../component/Alert";
 
 import Stars from "../../component/Stars";
@@ -30,11 +31,12 @@ function Store(props) {
   };
 
   const [waitModal, setWaitModal] = useState(false);
+  const [reserveModal, setReserveModal] = useState(false);
 
   const [alertFg, setAlertFg] = useState(false);
   const sleep = (ms) => {
-    return new Promise((resolve) => setTimeout(resolve, ms))
-  }
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
   function copyText(txt) {
     setAlertFg(true);
     navigator.clipboard.writeText(txt);
@@ -45,6 +47,7 @@ function Store(props) {
     <div className="Store">
       <ModalPhoto imageUrl={imageUrl} modalFlag={imgModal} func={setImgModal} />
       <ModalWait modalFlag={waitModal} func={setWaitModal} />
+      <ModalReserve modalFlag={reserveModal} func={setReserveModal} />
       <div className="Store-Header-Area">
         <div className="Exit">
           <img src={exit} alt="Exit-Icon" onClick={() => navigate(-1)} />
@@ -52,7 +55,7 @@ function Store(props) {
         <div className="Store-Header-Detail">
           <div className="Store-Header-Detail-Left">
             <div className="Store-name">{storeDetail.name}</div>
-            <div className="Store-location" onClick={()=>copyText(storeDetail.areaDetail)}>
+            <div className="Store-location" onClick={() => copyText(storeDetail.areaDetail)}>
               {storeDetail.areaDetail} ({storeDetail.areaDong})
             </div>
             {alertFg && <Alert className="alert" />}
@@ -117,7 +120,12 @@ function Store(props) {
           <div>리뷰 더보기 ＞</div>
         </div>
       </div>
-      <Tab wait={storeDetail.waitingFlag} reserve={storeDetail.reservationFlag} func1={setWaitModal}  />
+      <Tab
+        wait={storeDetail.waitingFlag}
+        reserve={storeDetail.reservationFlag}
+        func1={setWaitModal}
+        func2={setReserveModal}
+      />
     </div>
   );
 }

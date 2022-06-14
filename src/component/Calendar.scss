@@ -1,0 +1,35 @@
+@import "../style.scss";
+
+.Calendar-Header > * {
+  display: inline-block;
+  margin: 30px 15px 30px 15px;
+  font-weight: 700;
+}
+.Calendar-Header {
+  text-align: center;
+}
+
+.prev,
+.next {
+  font-weight: 900;
+  color: $orangeColor;
+}
+
+.prev-none {
+  font-weight: 900;
+  color: $lightGrayColor;
+}
+
+.Calendar-Body-Row {
+  height: 65px;
+}
+
+.cal_none {
+  color: $lightGrayColor;
+}
+
+.cal_today {
+  color: white;
+  font-weight: 700;
+  background-color: $orangeColor;
+}

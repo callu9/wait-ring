@@ -1,8 +1,11 @@
 @import "../style.scss";
 
+.Calendar {
+  margin: 15px 0 40px 0;
+}
 .Calendar-Header > * {
   display: inline-block;
-  margin: 30px 15px 30px 15px;
+  margin: 15px;
   font-weight: 700;
 }
 .Calendar-Header {
@@ -30,6 +33,6 @@
 
 .cal_today {
   color: white;
-  font-weight: 700;
+  font-weight: 500;
   background-color: $orangeColor;
 }

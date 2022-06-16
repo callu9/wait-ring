@@ -104,4 +104,60 @@
   height: 60vh;
   min-height: 400px;
   text-align: center;
+  overflow-y: auto;
+}
+
+.Modal-Reserve-Calendar, .Modal-Reserve-Time {
+  margin: 30px 10px 10px 30px;
+}
+.notice {
+  color: $grayColor;
+  text-align: left;
+}
+.notice > * {
+  display: inline-block;
+}
+.notice img {
+  width: 15px;
+  margin-right: 10px;
+}
+
+.Modal-Reserve-Time {
+  margin-bottom: 30px;
+}
+.Modal-Reserve-Time-List {
+  text-align: left;
+  margin-top: 10px;
+}
+.Modal-Reserve-Time-List-item {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  margin: 10px 10px 10px 0;
+  border: 1px solid $lightGrayColor;
+  border-radius: 15px;
+  font-weight: 500;
+}
+.Modal-Reserve-Time-List-item-active {
+  @extend .Modal-Reserve-Time-List-item;
+  background-color: $orangeColor;
+  font-weight: 600;
+  color: white;
+  border: none;
+}
+
+.Modal-Reserve-Button-area {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.Modal-Reserve-Button {
+  display: inline-block;
+  background-color: $lightOrangeColor;
+  padding: 10px 25px 10px 25px;
+  border-radius: 15px;
+  color: white;
+  font-weight: 500;
+}
+.Modal-Reserve-Button-active {
+  @extend .Modal-Reserve-Button;
+  background-color: $orangeColor;
 }

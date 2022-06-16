@@ -4,54 +4,73 @@ import "./Calendar.scss";
 export default function Calendar(props) {
   const [year, setYear] = useState(props.year);
   const [month, setMonth] = useState(props.month);
-  const [date, setDate] = useState(props.todayDate);
+  const [date, setDate] = useState(props.todayDate + 1);
 
-  function changeMonth(param) {
-    if (param === -1) {
-      if (month > 1) {
-        if (
-          year === props.year &&
-          month - 1 === props.month &&
-          date < props.todayDate
-        )
-          setDate(props.todayDate);
-        setMonth(month - 1);
-      } else {
-        setMonth(12);
-        setYear(year - 1);
-      }
-    } else if (param === 1) {
-      if (month < 12) {
-        setMonth(month + 1);
-      } else {
-        setMonth(1);
-        setYear(year + 1);
-      }
-    }
+  function changeCalDate(calText) {
+    props.func1(calText);
+    props.func2(null);
+    props.func3(false);
+  }
+  function makeCalText(num) {
+    return num < 10 ? "0" + num : num;
+  }
+
+  function isValidDate(m, d) {
+    const lastDay = new Date(year, m, 0);
+    return (
+      !(year === props.year && m === props.month && d <= props.todayDate) &&
+      d <= lastDay.getDate()
+    );
   }
 
   function changeDate(d) {
-    if (
-      year === props.year &&
-      month === props.month &&
-      date < props.todayDate
-    )
-      return;
+    if (!d || !isValidDate(month, d)) return;
     setDate(d);
+    changeCalDate(`${year}.${makeCalText(month)}.${makeCalText(d)}`);
   }
-
   function changeDateName(d) {
-    if (year === props.year && month === props.month && d < props.todayDate)
-      return "cal_none";
+    if (!isValidDate(month, d)) return "cal_none";
     if (d === date) return "cal_today";
     return "cal_day";
+  }
+
+  function prevMonth() {
+    if (month > 1) {
+      if (isValidDate(month-1, date)) {
+        setMonth(month - 1);
+        changeCalDate(`${year}.${makeCalText(month - 1)}.${makeCalText(date)}`);
+      } else {
+        setDate(props.todayDate + 1);
+        setMonth(month - 1);
+        changeCalDate(
+          `${year}.${makeCalText(month - 1)}.${makeCalText(
+            props.todayDate + 1
+          )}`
+        );
+      }
+    } else {
+      setMonth(12);
+      setYear(year - 1);
+      changeCalDate(`${year - 1}.12.${makeCalText(date)}`);
+    }
+  }
+
+  function nextMonth() {
+    if (month < 12) {
+      setMonth(month + 1);
+      changeCalDate(`${year}.${makeCalText(month + 1)}.${makeCalText(date)}`);
+    } else {
+      setMonth(1);
+      setYear(year + 1);
+      changeCalDate(`${year + 1}.01.${makeCalText(date)}`);
+    }
   }
 
   const Rows = () => {
     const startDay = new Date(year, month - 1, 1);
     const lastDay = new Date(year, month, 0);
     let rows = [];
-    let date = 1;
+    let dateNum = 1;
     for (
       let row = 0;
       row <= (startDay.getDay() + lastDay.getDate()) / 7;
@@ -64,7 +83,7 @@ export default function Calendar(props) {
         }
       }
       for (let i = dates.length; i < 7; i++) {
-        if (date <= lastDay.getDate()) dates[i] = date++;
+        if (dateNum <= lastDay.getDate()) dates[i] = dateNum++;
         else dates[i] = "";
       }
       rows = [
@@ -85,13 +104,13 @@ export default function Calendar(props) {
     return rows;
   };
 
-  const calHeader = ['일', '월', '화', '수', '목', '금', '토'];
+  const calHeader = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
     <div className="Calendar">
       <div className="Calendar-Header">
         {year > props.year || month > props.month ? (
-          <div className="prev" onClick={() => changeMonth(-1)}>
+          <div className="prev" onClick={prevMonth}>
             ＜
           </div>
         ) : (
@@ -100,7 +119,7 @@ export default function Calendar(props) {
         <div>
           {year}.{month}
         </div>
-        <div className="next" onClick={() => changeMonth(1)}>
+        <div className="next" onClick={nextMonth}>
           ＞
         </div>
       </div>
@@ -108,7 +127,9 @@ export default function Calendar(props) {
         <table className="Calendar-Body-Table">
           <thead className="cal_week">
             <tr>
-              {calHeader.map((cal, index)=>(<th key={index}>{cal}</th>))}
+              {calHeader.map((cal, index) => (
+                <th key={index}>{cal}</th>
+              ))}
             </tr>
           </thead>
           <tbody>

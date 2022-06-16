@@ -9,8 +9,8 @@ import storage from "../../storage.js";
 function MyWait() {
   const tabFlag = useLocation().pathname.includes("/reserve") ? false : true;
   const [waitFlag, setWaitFlag] = useState(tabFlag);
-  function changeTab() {
-    setWaitFlag(!waitFlag);
+  function changeTab(flag) {
+    setWaitFlag(flag);
   }
 
   return (
@@ -23,13 +23,13 @@ function MyWait() {
         <div className="MyWait-Body-Tab">
           <div
             className={waitFlag ? "MyWait-Tab-Active" : "MyWait-Tab-Inactive"}
-            onClick={changeTab}
+            onClick={() => changeTab(true)}
           >
             웨이팅
           </div>
           <div
             className={waitFlag ? "MyWait-Tab-Inactive" : "MyWait-Tab-Active"}
-            onClick={changeTab}
+            onClick={() => changeTab(false)}
           >
             예약
           </div>

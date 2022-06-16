@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import "./Etc.scss";
 import storage from "../../storage.js";
+import WaitList from "../../component/wait/WaitList.js";
+import ReserveList from "../../component/wait/ReserveList.js";
 
 import exit from "../../image/exit.png";
 
@@ -13,115 +15,16 @@ export default function EtcMyWait(props) {
 
   const navigate = useNavigate();
   const [waitFlag, setWaitFlag] = useState(tabFlag);
-  function changeTab() {
-    setWaitFlag(!waitFlag);
+  function changeTab(flag) {
+    setWaitFlag(flag);
   }
 
-  const Wait = ({ data = {} }) => {
-    return (
-      <table className="MyWait-Table-Etc">
-        <tbody>
-          <tr className="MyWait-Table-row-first">
-            <td className="left">매장명</td>
-            <td className="right" onClick={() => navigate("/store/" + data.storeId)}>
-              {data.storeName}
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row">
-            <td className="left">대기번호</td>
-            <td className="right">
-              {data.status !== 1 ? (
-                <div>
-                  <span className="right-orange">{data.waitingNum}번 </span>
-                  {data.waitingBefore > "0" ? (
-                    <span>({data.waitingBefore}팀 남았어요)</span>
-                  ) : (
-                    <span>(곧 입장해요!)</span>
-                  )}
-                </div>
-              ) : (
-                <span className="right">{data.waitingNum}번</span>
-              )}
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row">
-            <td className="left">인원</td>
-            <td className="right">
-              성인 {data.adult}명{data.child > 0 ? " / 아동 " + data.child + "명" : ""}
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row-last">
-            {data.status === 1 ? (
-              <td className="More-Etc" colSpan="2">
-                <div className="Two-Buttons" onClick={() => navigate("/store/" + data.storeId)}>
-                  매장 상세
-                </div>
-                <div className="Two-Buttons">리뷰 쓰기</div>
-              </td>
-            ) : (
-              <td className="More-Etc" colSpan="2">
-                <div className="One-Button" onClick={() => navigate("/store/" + data.storeId)}>
-                  매장 상세
-                </div>
-              </td>
-            )}
-          </tr>
-        </tbody>
-      </table>
-    );
-  };
-
-  const Reserve = ({ data = {} }) => {
-    return (
-      <table className="MyWait-Table-Etc">
-        <tbody>
-          <tr className="MyWait-Table-row-first">
-            <td className="left">매장명</td>
-            <td className="right" onClick={() => navigate("/store/" + data.storeId)}>
-              {data.storeName}
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row">
-            <td className="left">인원</td>
-            <td className="right">
-              성인 {data.adult}명{data.child > 0 ? " / 아동 " + data.child + "명" : ""}
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row">
-            <td className="left">예약일시</td>
-            <td className="right">
-              <span className={data.status === 1 ? "right-orange" : "right"}>
-                {data.reserveDate}
-              </span>
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row-last">
-            {data.status === 2 ? (
-              <td className="More-Etc" colSpan="2">
-                <div className="Two-Buttons" onClick={() => navigate("/store/" + data.storeId)}>
-                  매장 상세
-                </div>
-                <div className="Two-Buttons">리뷰 쓰기</div>
-              </td>
-            ) : (
-              <td className="More-Etc" colSpan="2">
-                <div className="One-Button" onClick={() => navigate("/store/" + data.storeId)}>
-                  매장 상세
-                </div>
-              </td>
-            )}
-          </tr>
-        </tbody>
-      </table>
-    );
-  };
-
   const EtcWait = () => {
-    if (waits.length > 0)
+    if (waits?.length)
       return (
         <div>
           {waits.map((reserve, i) => (
-            <Wait key={i} data={reserve} />
+            <WaitList key={i} data={reserve} />
           ))}
         </div>
       );
@@ -132,12 +35,13 @@ export default function EtcMyWait(props) {
         </div>
       );
   };
+
   const EtcReserve = () => {
-    if (reserves.length > 0)
+    if (reserves?.length)
       return (
         <div>
           {reserves.map((reserve, i) => (
-            <Reserve key={i} data={reserve} />
+            <ReserveList key={i} data={reserve} />
           ))}
         </div>
       );
@@ -162,13 +66,13 @@ export default function EtcMyWait(props) {
         <div className="MyWait-Body-Tab">
           <div
             className={waitFlag ? "MyWait-Tab-Active" : "MyWait-Tab-Inactive"}
-            onClick={changeTab}
+            onClick={() => changeTab(true)}
           >
             웨이팅
           </div>
           <div
             className={waitFlag ? "MyWait-Tab-Inactive" : "MyWait-Tab-Active"}
-            onClick={changeTab}
+            onClick={() => changeTab(false)}
           >
             예약
           </div>

@@ -4,66 +4,46 @@ import { useNavigate } from "react-router-dom";
 import "./Alarm.scss";
 import noticeIcon from "../../image/notice-none.png";
 import noticeIconNew from "../../image/notice-new.png";
+import storage from "../../storage.js";
 
-const data = [
-  {
-    id: 1,
-    wait: 0,
-    reserve: 1,
-    storeId: 2,
-    storName: "호랑이식당 롯데영등포점",
-    datetime: "2022.00.00(월) 00:00",
-    people: "성인 0명",
-    unread: true,
-  },
-  {
-    id: 2,
-    wait: 2,
-    reserve: 0,
-    storeId: 1,
-    storName: "고든램지버거",
-    datetime: "2022.00.00(월) 00:00",
-    people: "성인 0명",
-    unread: false,
-  },
-  {
-    id: 3,
-    wait: 1,
-    reserve: 0,
-    storeId: 1,
-    storName: "고든램지버거",
-    datetime: "2022.00.00(월) 00:00",
-    people: "성인 0명",
-    unread: false,
-  },
-];
+const data = storage.alarmList;
 
 export default function Alarm(props) {
   const navigate = useNavigate();
 
   function makeContent(wait, reserve, storeName) {
     let alarmStr = "";
-    if(reserve>0)
-    alarmStr = "예약 완료";
+    if (reserve > 0) alarmStr = "예약 완료";
     else {
-      if(wait===1) alarmStr = "원격 웨이팅 등록";
-      else if(wait===2) alarmStr = "입장 안내";
+      if (wait === 1) alarmStr = "원격 웨이팅 등록";
+      else alarmStr = "입장 안내";
     }
-    return storeName+" "+alarmStr;
+    return storeName + " " + alarmStr;
   }
-  
+
   const list = data.map((item) => (
     <tr key={item.id}>
       <td className="Alarm-List-Item">
         <div className="Alarm-List-Item-img">
           {item.unread ? (
-            <img src={noticeIconNew} className="notice-icon" alt="notice-icon" />
+            <img
+              src={noticeIconNew}
+              className="notice-icon"
+              alt="notice-icon"
+            />
           ) : (
             <img src={noticeIcon} className="notice-icon" alt="notice-icon" />
           )}
         </div>
         <div className="Alarm-List-Item-body">
-          <div className="Alarm-List-Item-content" onClick={() => navigate(item.reserve>0?"/my-wait/reserve":"/my-wait")}>{makeContent(item.wait, item.reserve, item.storName)}</div>
+          <div
+            className="Alarm-List-Item-content"
+            onClick={() =>
+              navigate(item.reserve > 0 ? "/my-wait/reserve" : "/my-wait")
+            }
+          >
+            {makeContent(item.wait, item.reserve, item.storName)}
+          </div>
           <div className="Alarm-List-Item-foot">
             {item.datetime} {item.people}
           </div>
@@ -71,16 +51,20 @@ export default function Alarm(props) {
       </td>
     </tr>
   ));
-  
+
   return (
     <div className="Alarm">
       <div className="Header">
         <div>알림</div>
       </div>
       <div className="Alarm-List-area">
-        <table>
-          <tbody>{list}</tbody>
-        </table>
+        {data.length ? (
+          <table>
+            <tbody>{list}</tbody>
+          </table>
+        ) : (
+          <div className="Alarm-List-None">도착한 알림 내역이 없습니다.</div>
+        )}
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const SearchBar = (props) => {
   ];
   const [keyword, setKeyword] = useState(props.keyword);
   const [keywordFlag, setKeywordFlag] = useState(
-    props.keyword !== "" ? true : false
+    props.keyword ? true : false
   );
   const [recentKeyword, setRecentKeyword] = useState(recentList);
 
@@ -33,7 +33,7 @@ const SearchBar = (props) => {
 
   const typeKeyword = (e) => {
     setKeyword(e.target.value);
-    if (keyword !== null && keyword.length > 0) setKeywordFlag(true);
+    if (e.target.value.length) setKeywordFlag(true);
     else setKeywordFlag(false);
   };
 

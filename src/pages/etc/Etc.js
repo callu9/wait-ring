@@ -16,7 +16,7 @@ function Etc(props) {
   const navigate = useNavigate();
 
   let user = storage.user;
-  let userFlag = user === undefined ? false : true;
+  let userFlag = Boolean(user);
 
   function movePage(path) {
     navigate(path);

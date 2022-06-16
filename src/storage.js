@@ -8,6 +8,38 @@ const storage = {
     review: 3,
     point: 860,
   },
+  alarmList: [
+    {
+      id: 1,
+      wait: 0,
+      reserve: 1,
+      storeId: 2,
+      storName: "호랑이식당 롯데영등포점",
+      datetime: "2022.00.00(월) 00:00",
+      people: "성인 0명",
+      unread: true,
+    },
+    {
+      id: 2,
+      wait: 2,
+      reserve: 0,
+      storeId: 1,
+      storName: "고든램지버거",
+      datetime: "2022.00.00(월) 00:00",
+      people: "성인 0명",
+      unread: false,
+    },
+    {
+      id: 3,
+      wait: 1,
+      reserve: 0,
+      storeId: 1,
+      storName: "고든램지버거",
+      datetime: "2022.00.00(월) 00:00",
+      people: "성인 0명",
+      unread: false,
+    },
+  ],
   storeData: [
     {
       id: 1,

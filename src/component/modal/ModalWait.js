@@ -16,14 +16,14 @@ export default function ModalWait(props) {
       if (adult <= 1) setButtonFg(false);
       setAdult(adult - 1);
     }
-    if (param === "child" && child > 0) setChild(child - 1);
+    else if (param === "child" && child > 0) setChild(child - 1);
   }
   function plus(param) {
     if (param === "adult") {
         if (!buttonFg) setButtonFg(true);
         setAdult(adult + 1);
     }
-    if (param === "child") setChild(child + 1);
+    else if (param === "child") setChild(child + 1);
   }
 
   return (

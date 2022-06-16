@@ -15,13 +15,12 @@ const Main = () => {
   const user = storage.user;
   const [userLocation, setUserLocation] = useState({});
   const [alarmFlag, setAlarmFlag] = useState(
-    user.id !== undefined && user.newAlarm > 0 ? true : false
+    user.id && user.newAlarm > 0 ? true : false
   );
 
   useEffect(() => {
-    if (user.id !== undefined && navigator.geolocation) {
+    if (user.id && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (pos) {
-        // console.log(pos);
         setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
       });
     }
@@ -29,7 +28,7 @@ const Main = () => {
   }, []);
 
   const MainMap = ({ user: {} }) => {
-    if (user.id !== undefined) {
+    if (user.id) {
       return <Map data={userLocation} />;
     } else {
       return (

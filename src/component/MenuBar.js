@@ -52,7 +52,7 @@ export default class MenuBar extends React.Component {
     }
 
     this.state = {
-      menuFlag: menuNum === null ? makeMenuFgWhenNull() : makeMenuFg(menuNum),
+      menuFlag: menuNum ? makeMenuFg(menuNum): makeMenuFgWhenNull(),
     };
   }
 

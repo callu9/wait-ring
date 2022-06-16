@@ -9,8 +9,11 @@ export default function Calendar(props) {
   function changeMonth(param) {
     if (param === -1) {
       if (month > 1) {
-        // setTodayFlag(month - 1 !== props.month ? false : true);
-        if (year === props.year && month - 1 === props.month && date < props.todayDate)
+        if (
+          year === props.year &&
+          month - 1 === props.month &&
+          date < props.todayDate
+        )
           setDate(props.todayDate);
         setMonth(month - 1);
       } else {
@@ -19,7 +22,6 @@ export default function Calendar(props) {
       }
     } else if (param === 1) {
       if (month < 12) {
-        // setTodayFlag(month + 1 !== props.month ? false : true);
         setMonth(month + 1);
       } else {
         setMonth(1);
@@ -29,12 +31,18 @@ export default function Calendar(props) {
   }
 
   function changeDate(d) {
-    if (year === props.year && month - 1 === props.month && date < props.todayDate) return;
+    if (
+      year === props.year &&
+      month === props.month &&
+      date < props.todayDate
+    )
+      return;
     setDate(d);
   }
 
   function changeDateName(d) {
-    if (year === props.year && month === props.month && d < props.todayDate) return "cal_none";
+    if (year === props.year && month === props.month && d < props.todayDate)
+      return "cal_none";
     if (d === date) return "cal_today";
     return "cal_day";
   }
@@ -42,9 +50,13 @@ export default function Calendar(props) {
   const Rows = () => {
     const startDay = new Date(year, month - 1, 1);
     const lastDay = new Date(year, month, 0);
-    const rows = [];
+    let rows = [];
     let date = 1;
-    for (let row = 0; row <= (startDay.getDay() + lastDay.getDate()) / 7; row++) {
+    for (
+      let row = 0;
+      row <= (startDay.getDay() + lastDay.getDate()) / 7;
+      row++
+    ) {
       let dates = [];
       if (row === 0) {
         for (let i = 0; i < startDay.getDay(); i++) {
@@ -55,18 +67,25 @@ export default function Calendar(props) {
         if (date <= lastDay.getDate()) dates[i] = date++;
         else dates[i] = "";
       }
-      rows.push(
+      rows = [
+        ...rows,
         <tr className="Calendar-Body-Row">
           {dates.map((d, index) => (
-            <td key={index} className={changeDateName(d)} onClick={() => changeDate(d)}>
+            <td
+              key={index}
+              className={changeDateName(d)}
+              onClick={() => changeDate(d)}
+            >
               {d}
             </td>
           ))}
-        </tr>
-      );
+        </tr>,
+      ];
     }
     return rows;
   };
+
+  const calHeader = ['일', '월', '화', '수', '목', '금', '토'];
 
   return (
     <div className="Calendar">
@@ -89,13 +108,7 @@ export default function Calendar(props) {
         <table className="Calendar-Body-Table">
           <thead className="cal_week">
             <tr>
-              <th>일</th>
-              <th>월</th>
-              <th>화</th>
-              <th>수</th>
-              <th>목</th>
-              <th>금</th>
-              <th>토</th>
+              {calHeader.map((cal, index)=>(<th key={index}>{cal}</th>))}
             </tr>
           </thead>
           <tbody>

@@ -1,0 +1,43 @@
+@import "../../style.scss";
+
+.Login,
+.Signup {
+  // z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  display: flex;
+}
+
+.Login-form,
+.Signup-form {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+
+.Login-form > * {
+  display: block;
+}
+
+.Login-form > input {
+  width: 35vw;
+  padding: 10px 5vw 10px 5vw;
+  margin: 15px 0 15px 0;
+  border-radius: 15px;
+  border: 1px solid $grayColor;
+}
+
+.Login-etc,
+.Signup-etc {
+  text-align: center;
+  margin-top: 15px;
+  color: $grayColor;
+}
+
+.to-login {
+  color: $orangeColor;
+  text-decoration: underline;
+}

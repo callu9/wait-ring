@@ -81,7 +81,11 @@ function Etc(props) {
                 <p>
                   <img src={userIcon} alt="userIcon" />
                 </p>
-                <p>{userFlag ? "내 정보 수정" : "로그인"}</p>
+                {userFlag ? (
+                  <p>"내 정보 수정"</p>
+                ) : (
+                  <p onClick={() => movePage("/login")}>"로그인"</p>
+                )}
               </td>
             </tr>
             {userFlag ? (

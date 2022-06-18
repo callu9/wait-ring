@@ -4,6 +4,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Login from "./pages/user/Login";
+import Signup from "./pages/user/Signup";
+
 import Main from "./pages/main/Main";
 import Search from "./pages/search/Search";
 import MyWait from "./pages/my-wait/MyWait";
@@ -23,6 +26,8 @@ class App extends Component {
     return (
       <Router>
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Main />} />
           <Route exact path="/search" element={<Search />} />
           <Route path="/my-wait/*" element={<MyWait />} />

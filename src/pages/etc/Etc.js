@@ -15,8 +15,7 @@ import storage from "../../storage.js";
 function Etc(props) {
   const navigate = useNavigate();
 
-  let user = storage.user;
-  let userFlag = Boolean(user);
+  let user = props.user;
 
   function movePage(path) {
     navigate(path);
@@ -32,7 +31,7 @@ function Etc(props) {
         </p>
       </div>
       <div className="Header-etc">
-        {userFlag ? (
+        {user ? (
           <div>
             <p className="Header-nickname">{user.nickname}</p>
             님,
@@ -47,7 +46,7 @@ function Etc(props) {
           </div>
         )}
       </div>
-      {userFlag ? (
+      {user ? (
         <table className="Activity-table">
           <tbody>
             <tr className="Activity-area">
@@ -81,14 +80,10 @@ function Etc(props) {
                 <p>
                   <img src={userIcon} alt="userIcon" />
                 </p>
-                {userFlag ? (
-                  <p>"내 정보 수정"</p>
-                ) : (
-                  <p onClick={() => movePage("/login")}>"로그인"</p>
-                )}
+                {user ? <p>내 정보 수정</p> : <p onClick={() => movePage("/login")}>로그인</p>}
               </td>
             </tr>
-            {userFlag ? (
+            {user ? (
               <tr className="Etc-List-Item" onClick={() => movePage("my-wait")}>
                 <td>
                   <p>
@@ -100,7 +95,7 @@ function Etc(props) {
             ) : (
               <></>
             )}
-            {userFlag ? (
+            {user ? (
               <tr className="Etc-List-Item" onClick={() => movePage("review")}>
                 <td>
                   <p>

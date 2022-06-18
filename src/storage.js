@@ -1,13 +1,13 @@
 const storage = {
-  user: {
-    id: "user01",
-    nickname: "유저01",
-    newAlarm: 1,
-    wait: 3,
-    reserve: 2,
-    review: 3,
-    point: 860,
-  },
+  // user: {
+  //   id: "user01",
+  //   nickname: "유저01",
+  //   newAlarm: 1,
+  //   wait: 3,
+  //   reserve: 2,
+  //   review: 3,
+  //   point: 860,
+  // },
   alarmList: [
     {
       id: 1,

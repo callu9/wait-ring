@@ -23,16 +23,17 @@ import Calendar from "./component/Calendar";
 
 class App extends Component {
   render() {
+    const user = JSON.parse(window.sessionStorage.getItem("user"));
     return (
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main user={user} />} />
           <Route exact path="/search" element={<Search />} />
-          <Route path="/my-wait/*" element={<MyWait />} />
-          <Route path="/liked" element={<Liked />} />
-          <Route path="/etc" element={<Etc />} />
+          <Route path="/my-wait/*" element={<MyWait user={user} />} />
+          <Route path="/liked" element={<Liked user={user} />} />
+          <Route path="/etc" element={<Etc user={user} />} />
           <Route path="/etc/my-wait/*" element={<EtcMyWait />} />
           <Route path="/etc/review" element={<EtcReview />} />
           <Route path="/alarm" element={<Alarm />} />

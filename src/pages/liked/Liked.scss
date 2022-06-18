@@ -24,3 +24,27 @@
   text-align: center;
   color: $grayColor;
 }
+
+.user-none {
+  width: 95%;
+  height: 68vh;
+  position: relative;
+  // display: block;
+  overflow: hidden;
+}
+.user-none > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // transform: translate(50, 50);
+  width: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+
+.LoginBtn {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}

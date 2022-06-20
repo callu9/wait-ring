@@ -5,7 +5,7 @@
 음식점 웨이팅/예약 신청을 위한 리액트 웹앱입니다.
 
 <img src="./readme-assets/waitring5.gif" /> 
-<img src="./readme-assets/waitring7.gif" />
+<img src="./readme-assets/waitring8.gif" />
 
 
 

@@ -10,19 +10,18 @@ function SearchResult() {
   const { keyword } = useParams();
   const [focusFlag, setFocusFlag] = useState(false);
   const [filterFlag, setFilterFlag] = useState([true, false, false]);
-
-  const stores = storage.storeData;
-  const result = stores.filter(
-    (item) =>
-      (item.name.includes(keyword) ||
-        item.areaDong.includes(keyword) ||
-        item.keyword.includes(keyword)) &&
-      (filterFlag[0] ||
-        (filterFlag[1] && item.waitingFlag) ||
-        (filterFlag[2] && item.reservationFlag))
+  const [sortFlag, setSortFlag] = useState(0);
+  const [resultArr, setResultArr] = useState(
+    storage.storeData.filter(
+      (item) =>
+        (item.name.includes(keyword) ||
+          item.areaDong.includes(keyword) ||
+          item.keyword.includes(keyword)) &&
+        (filterFlag[0] ||
+          (filterFlag[1] && item.waitingFlag) ||
+          (filterFlag[2] && item.reservationFlag))
+    )
   );
-
-  const [resultArr, setResultArr] = useState(result);
 
   const initFocusFlag = (fg) => {
     setFocusFlag(fg);
@@ -32,37 +31,46 @@ function SearchResult() {
     let tmpArr = [false, false, false];
     tmpArr[idx] = true;
     setFilterFlag(tmpArr);
+    getResult(tmpArr, sortFlag);
   }
 
-  function sortResult(e) {
-    let tmpResult = result;
-    switch (e.target.value) {
-      case "1": // 인기(리뷰점수) 순
-        tmpResult.sort(function (a, b) {
-          if (a.hasOwnProperty("review")) {
-            return b.review - a.review;
-          }
-        });
-        setResultArr(tmpResult);
-        break;
-      case "2": // 좋아요 순
-        tmpResult.sort(function (a, b) {
-          if (a.hasOwnProperty("liked")) {
-            return b.liked - a.liked;
-          }
-        });
-        setResultArr(tmpResult);
-        break;
-      default: // 기본
-        setResultArr(result);
-        break;
+  function changeSortFlag(e) {
+    setSortFlag(e.target.value);
+    getResult(filterFlag, e.target.value);
+  }
+
+  function getResult(filterFlag, sortFlag) {
+    let result = storage.storeData.filter(
+      (item) =>
+        (item.name.includes(keyword) ||
+          item.areaDong.includes(keyword) ||
+          item.keyword.includes(keyword)) &&
+        (filterFlag[0] ||
+          (filterFlag[1] && item.waitingFlag) ||
+          (filterFlag[2] && item.reservationFlag))
+    );
+
+    if(sortFlag === "1") {
+      result.sort(function (a, b) {
+        return b.review - a.review;
+      });
+    } else if (sortFlag === "2") {
+      result.sort(function (a, b) {
+        return b.liked - a.liked;
+      });
     }
+    
+    setResultArr(result);
   }
 
   return (
     <div className="Search-Result">
       <div className="Search-Result-Bar">
-        <SearchBar keyword={keyword} focusFlag={focusFlag} func={initFocusFlag} />
+        <SearchBar
+          keyword={keyword}
+          focusFlag={focusFlag}
+          func={initFocusFlag}
+        />
       </div>
       {!focusFlag && (
         <div className="Search-Result-Content">
@@ -87,9 +95,9 @@ function SearchResult() {
                 예약 가능
               </div>
             </div>
-            {result.length > 0 && (
+            {resultArr.length > 0 && (
               <div className="Search-Result-Sort-Area">
-                <select onChange={(e) => sortResult(e)}>
+                <select onChange={(e) => changeSortFlag(e)}>
                   <option value="0">기본 순</option>
                   <option value="1">인기 순</option>
                   <option value="2">좋아요 순</option>
@@ -98,10 +106,12 @@ function SearchResult() {
             )}
           </div>
           <div className="Search-Result-Body">
-            {result.length > 0 ? (
+            {resultArr.length > 0 ? (
               <List data={resultArr} />
             ) : (
-              <div className="Search-Result-Body-None">검색 결과가 없습니다.</div>
+              <div className="Search-Result-Body-None">
+                검색 결과가 없습니다.
+              </div>
             )}
           </div>
         </div>

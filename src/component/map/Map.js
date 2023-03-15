@@ -4,7 +4,7 @@ import KakaoMapScript from "./KakaoMapScript";
 export default function Map(data) {
   useEffect(() => {
     KakaoMapScript(data);
-  }, []);
+  }, [data]);
 
   return (
     <div

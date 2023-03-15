@@ -10,47 +10,96 @@
     margin-top: 52px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+.Alarm-List-area {
+    
+    > .Alarm-List-Item-area:first-child {
+        border-top: 1px solid $lightGrayColor;
+    }
 
-td {
-    border-top: 1px solid $lightGrayColor;
-    border-bottom: 1px solid $lightGrayColor;
-}
+    .Alarm-List-Item-area {
+        display: flex;
+        border-bottom: 1px solid $lightGrayColor;
+        
+        .Alarm-List-Item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            right: 0;
+            
+            img {
+                width: 50px;
+                margin: 12px 25px 12px 0;
+            }
+            
+            .Alarm-List-Item-body {
+                > p{
+                    margin: 0;
+                }
+            }
+            
+            .Alarm-List-Item-content {
+                font-size: 12pt;
+                font-weight: 500;
+            }
+            
+            .Alarm-List-Item-foot {
+                font-size: $header-small-font-size;
+                font-weight: $header-small-font-weight;
+                color: $grayColor;
+            }
+        }
 
-.Alarm-List-Item > div {
-    display: inline-block;
-    vertical-align: middle;
-}
+        .deleted {
+            right: 100vw;
+            transition: right 0.3s ease-in;
+        }
 
-.Alarm-List-Item-img {
-    width: 50px;
-    margin: 12px 25px 12px 0;
-}
+        .swiped {
+            right: 100px;
+            transition: right 0.3s ease;
+        }
+        
+        .unswiped {
+            right: 0px;
+            transition: right 0.3s ease;
+        }
 
-.Alarm-List-Item-img > img {
-    width: 100%;
-}
+        .btn-delete {
+            right: 25px;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 76px;
+            color: white;
+            background: #B5B5B5;
+            
+            > p {
+                height: 20px;
+                overflow: hidden;
+            }
+        }
+        
+        .active {
+            width: 100%;
+            transition: all 0.4s ease;
+        }
 
-.Alarm-List-Item-body {
-    justify-self: center;
-}
+        .on {
+            width: 100px;
+            transition: width 0.4s ease;
+        }
 
-.Alarm-List-Item-content {
-    font-size: 12pt;
-    font-weight: 500;
-}
-
-.Alarm-List-Item-foot {
-    font-size: $header-small-font-size;
-    font-weight: $header-small-font-weight;
-    color: $grayColor;
-}
-
-.Alarm-List-None {
-    margin-top: 10vh;
-    text-align: center;
-    color: $grayColor;
+        .off {
+            width: 0px;
+            transition: all 0.3s ease;
+        }
+    }
+    
+    .Alarm-List-None {
+        margin-top: 10vh;
+        text-align: center;
+        color: $grayColor;
+    }
 }

@@ -1,10 +1,10 @@
 const { kakao } = window;
 
-export default function KakaoMapScript({ data }) {
+export default function KakaoMapScript({data}) {
   const container = document.getElementById("myMap");
   const options = {
     center:
-      data.lat !== undefined && data.lng !== undefined
+      data?.lat !== undefined && data?.lng !== undefined
         ? new kakao.maps.LatLng(data.lat, data.lng)
         : new kakao.maps.LatLng(37.5666805, 126.9784147),
     level: 6,

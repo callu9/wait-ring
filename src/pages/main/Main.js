@@ -14,19 +14,28 @@ import Map from "../../component/map/Map";
 const Main = (props) => {
   const user = props.user;
   const [userLocation, setUserLocation] = useState({});
-  const [alarmFlag, setAlarmFlag] = useState(user?.id && user.newAlarm > 0 ? true : false);
+  const [alarmFlag, setAlarmFlag] = useState(
+    user?.id && user?.newAlarm > 0 ? true : false
+  );
 
   useEffect(() => {
     if (user?.id && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (pos) {
-        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        setUserLocation({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+        });
       });
     }
     return () => {};
-  }, []);
+  }, [user]);
 
   const MainMap = ({ user }) => {
-    if (user?.id) {
+    if (
+      user?.id &&
+      userLocation?.lat !== undefined &&
+      userLocation?.lng !== undefined
+    ) {
       return <Map data={userLocation} />;
     } else {
       return (

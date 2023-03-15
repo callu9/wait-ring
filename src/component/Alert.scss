@@ -10,8 +10,7 @@
     z-index: 1;
     animation-name: fadeIn;
     animation-duration: 3s;
-    -webkit-animation-name: fadeIn;
-    -webkit-animation-duration: 3s;
+    -webkit-animation: fadeIn 3s; /* Safari and Chrome */
 }
 
 .alert-msg {

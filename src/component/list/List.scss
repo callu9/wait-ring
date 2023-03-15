@@ -1,5 +1,11 @@
 @import "../../style.scss";
 
+.List-area {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .ListItem-area {
   margin-right: 15px;
   display: inline-block;
@@ -39,7 +45,7 @@
 
 .ListItem-image-area-112 {
   @extend .ListItem-image-area;
-  max-width: 200px;
+  max-width: 300px;
   min-width: 112px;
   width: 40vw;
   height: 100px;
@@ -74,7 +80,7 @@
 .ListItem-name-112 {
   @extend .ListItem-name;
   width: 35vw;
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .ListItem-foot {

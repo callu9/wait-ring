@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 import "./Search.scss";
 import SearchBar from "../../component/SearchBar";
@@ -31,12 +31,14 @@ function Search() {
   };
 
   const bestList = best.map((item) => (
-    <tr key={item.id}>
-      <td className="Best-List-Item" onClick={() => searchKeyword(item.keyword)}>
-        <p className={bestStyle(item.id)}>{item.id}</p>
-        <p>{item.keyword}</p>
-      </td>
-    </tr>
+    <div
+      key={item.id}
+      className="Best-List-Item"
+      onClick={() => searchKeyword(item.keyword)}
+    >
+      <p className={bestStyle(item.id)}>{item.id}</p>
+      <p>{item.keyword}</p>
+    </div>
   ));
 
   const recommend = [
@@ -46,7 +48,11 @@ function Search() {
   ];
 
   const recommendList = recommend.map((item) => (
-    <div key={item.id} className="keyword" onClick={() => searchKeyword(item.keyword)}>
+    <div
+      key={item.id}
+      className="keyword"
+      onClick={() => searchKeyword(item.keyword)}
+    >
       <span>#</span>
       <span className="keyword-content">{item.keyword}</span>
     </div>
@@ -68,9 +74,7 @@ function Search() {
           <>
             <div className="Best-area">
               <div className="SmallHeader">인기 검색어</div>
-              <table className="Best-List">
-                <tbody>{bestList}</tbody>
-              </table>
+              <div className="Best-List">{bestList}</div>
             </div>
             <div className="Recommend-area">
               <div className="SmallHeader">추천 검색어</div>

@@ -3,11 +3,12 @@
 .Modal-Photo-Background,
 .Modal-Wait-Background,
 .Modal-Reserve-Background {
-  z-index: 2;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
+  left: 0;
+  top: 0;
   background-color: rgba($color: $grayColor, $alpha: 0.3);
 }
 
@@ -25,6 +26,7 @@
 //
 
 .Modal-Photo {
+  z-index: 3;
   top: 50%;
   left: 50%;
   width: 90%;
@@ -46,118 +48,140 @@
 // ModalWait
 //
 .Modal-Wait {
-  @extend .Modal-Photo;
-  top: 45%;
-  height: 45vh;
-  min-height: 400px;
-  text-align: center;
-}
+  .Modal-Wait-Content {
+    @extend .Modal-Photo;
+    top: 45%;
+    height: 45vh;
+    min-height: 400px;
+    text-align: center;
 
-.Modal-Notice {
-  margin-top: 12vw;
-  color: $grayColor;
-}
+    .Modal-Notice {
+      margin-top: 12vw;
+      color: $grayColor;
+    }
 
-.Modal-Wait-People {
-  margin: 25px;
-}
-.Modal-Wait-People > div {
-  margin-bottom: 25px;
-}
-.Modal-Wait-People .left {
-  font-weight: 500;
-}
+    .Modal-Wait-People {
+      margin: 25px;
 
-.minus,
-.plus {
-  display: inline-block;
-  margin: 5px 10px 5px 10px;
-  padding: 3px 13px 5px 13px;
-  border: 2px solid $lightGrayColor;
-  border-radius: 25px;
-  font-size: 15pt;
-}
+      > div {
+        margin: 25px 10px 20px 10px;
 
-.Modal-Wait-Button {
-  left: 30%;
-  right: 30%;
-  bottom: 10%;
-  position: fixed;
-  text-align: center;
-  background-color: $lightOrangeColor;
-  padding: 10px 15px 10px 15px;
-  border-radius: 15px;
-  color: white;
-  font-weight: 500;
-}
-.Modal-Wait-Button-active {
-  @extend .Modal-Wait-Button;
-  background-color: $orangeColor;
+        .MyWait-Table-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            margin: 0;
+          }
+
+          .minus,
+          .plus {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            margin: 5px 10px 5px 10px;
+            border: 2px solid $lightGrayColor;
+            border-radius: 25px;
+            font-size: 15pt;
+          }
+        }
+      }
+      .left {
+        font-weight: 500;
+      }
+    }
+
+    
+    .Modal-Wait-Button {
+      left: 30%;
+      right: 30%;
+      bottom: 10%;
+      position: fixed;
+      text-align: center;
+      background-color: $lightOrangeColor;
+      padding: 10px 15px 10px 15px;
+      border-radius: 15px;
+      color: white;
+      font-weight: 500;
+    }
+    .Modal-Wait-Button-active {
+      @extend .Modal-Wait-Button;
+      background-color: $orangeColor;
+    }
+  }
 }
 
 //
 // ModalReserve
 //
 .Modal-Reserve {
-  @extend .Modal-Photo;
-  top: 47%;
-  height: 60vh;
-  min-height: 400px;
-  text-align: center;
-  overflow-y: auto;
-}
+  z-index: 2;
 
-.Modal-Reserve-Calendar, .Modal-Reserve-Time {
-  margin: 30px 10px 10px 30px;
-}
-.notice {
-  color: $grayColor;
-  text-align: left;
-}
-.notice > * {
-  display: inline-block;
-}
-.notice img {
-  width: 15px;
-  margin-right: 10px;
-}
+  .Modal-Reserve-Content {
+    @extend .Modal-Photo;
+    top: 47%;
+    height: 60vh;
+    min-height: 400px;
+    text-align: center;
+    overflow-y: auto;
 
-.Modal-Reserve-Time {
-  margin-bottom: 30px;
-}
-.Modal-Reserve-Time-List {
-  text-align: left;
-  margin-top: 10px;
-}
-.Modal-Reserve-Time-List-item {
-  display: inline-block;
-  padding: 5px 10px 5px 10px;
-  margin: 10px 10px 10px 0;
-  border: 1px solid $lightGrayColor;
-  border-radius: 15px;
-  font-weight: 500;
-}
-.Modal-Reserve-Time-List-item-active {
-  @extend .Modal-Reserve-Time-List-item;
-  background-color: $orangeColor;
-  font-weight: 600;
-  color: white;
-  border: none;
-}
+    .Modal-Reserve-Calendar,
+    .Modal-Reserve-Time {
+      margin: 30px 10px 30px 30px;
 
-.Modal-Reserve-Button-area {
-  text-align: center;
-  margin-bottom: 35px;
-}
-.Modal-Reserve-Button {
-  display: inline-block;
-  background-color: $lightOrangeColor;
-  padding: 10px 25px 10px 25px;
-  border-radius: 15px;
-  color: white;
-  font-weight: 500;
-}
-.Modal-Reserve-Button-active {
-  @extend .Modal-Reserve-Button;
-  background-color: $orangeColor;
+      .notice {
+        color: $grayColor;
+        text-align: left;
+        > * {
+          display: inline-block;
+        }
+        img {
+          width: 15px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .Modal-Reserve-Time-List {
+      text-align: left;
+      margin-top: 10px;
+
+      > div {
+        display: inline-block;
+        padding: 5px 10px 5px 10px;
+        margin: 10px 10px 10px 0;
+        border: 1px solid $lightGrayColor;
+        border-radius: 15px;
+        font-weight: 500;
+      }
+
+      .Modal-Reserve-Time-List-item-active {
+        background-color: $orangeColor;
+        font-weight: 600;
+        color: white;
+        border: none;
+      }
+    }
+
+    .Modal-Reserve-Button-area {
+      text-align: center;
+      margin-bottom: 35px;
+
+      > div {
+        display: inline-block;
+        background-color: $lightOrangeColor;
+        padding: 10px 25px 10px 25px;
+        border-radius: 15px;
+        color: white;
+        font-weight: 500;
+      }
+
+      .Modal-Reserve-Button-active {
+        background-color: $orangeColor;
+      }
+    }
+  }
 }

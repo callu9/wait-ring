@@ -36,7 +36,7 @@ export default function Calendar(props) {
 
   function prevMonth() {
     if (month > 1) {
-      if (isValidDate(month-1, date)) {
+      if (isValidDate(month - 1, date)) {
         setMonth(month - 1);
         changeCalDate(`${year}.${makeCalText(month - 1)}.${makeCalText(date)}`);
       } else {
@@ -69,37 +69,36 @@ export default function Calendar(props) {
   const Rows = () => {
     const startDay = new Date(year, month - 1, 1);
     const lastDay = new Date(year, month, 0);
-    let rows = [];
+    const rows = [];
     let dateNum = 1;
     for (
       let row = 0;
       row <= (startDay.getDay() + lastDay.getDate()) / 7;
       row++
     ) {
-      let dates = [];
+      const dates = [];
       if (row === 0) {
         for (let i = 0; i < startDay.getDay(); i++) {
-          dates[i] = "";
+          dates.push("");
         }
       }
       for (let i = dates.length; i < 7; i++) {
         if (dateNum <= lastDay.getDate()) dates[i] = dateNum++;
-        else dates[i] = "";
+        else dates.push("");
       }
-      rows = [
-        ...rows,
-        <tr className="Calendar-Body-Row">
+      rows.push(
+        <tr key={row} className="Calendar-Body-Row">
           {dates.map((d, index) => (
             <td
-              key={index}
+              key={row * 7 + index + 1}
               className={changeDateName(d)}
               onClick={() => changeDate(d)}
             >
               {d}
             </td>
           ))}
-        </tr>,
-      ];
+        </tr>
+      );
     }
     return rows;
   };

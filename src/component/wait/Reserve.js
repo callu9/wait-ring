@@ -52,33 +52,31 @@ const ReserveComplete = () => {
 const ReserveTable = ({ data = {} }) => {
   return (
     <div className="MyWait-Content">
-      <table className="MyWait-Table">
-        <tbody>
-          <tr className="MyWait-Table-row">
-            <td className="left">매장명</td>
-            <td className="right">
+      <div className="MyWait-Table">
+          <div className="MyWait-Table-row">
+            <p className="left">매장명</p>
+            <p className="right">
               <Link
                 to={"/store/" + data.storeId}
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 {data.storeName}
               </Link>
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row">
-            <td className="left">인원</td>
-            <td className="right">
+            </p>
+          </div>
+          <div className="MyWait-Table-row">
+            <p className="left">인원</p>
+            <p className="right">
               성인 {data.adult}명{data.child > 0 ? " / 아동 " + data.child + "명" : ""}
-            </td>
-          </tr>
-          <tr className="MyWait-Table-row">
-            <td className="left">예약일시</td>
-            <td className="right">
+            </p>
+          </div>
+          <div className="MyWait-Table-row">
+            <p className="left">예약일시</p>
+            <p className="right">
               <span className="right-orange">{data.reserveDate}</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </p>
+          </div>
+      </div>
       <div className="MyWait-Map">
         <Map
           data={{

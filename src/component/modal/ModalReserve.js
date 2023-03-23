@@ -39,8 +39,8 @@ export default function ModalReserve(props) {
   return (
     <>
       {props.modalFlag && (
-        <div className="Modal-Reserve-Background">
-          <div className="Modal-Reserve">
+        <div className="Modal-Reserve">
+          <div className="Modal-Reserve-Content">
             <div className="Modal-Cancel">
               <img
                 src={cancel}
@@ -96,6 +96,10 @@ export default function ModalReserve(props) {
               </div>
             </div>
           </div>
+          <div
+            className="Modal-Reserve-Background"
+            onClick={changeModalFlag}
+          ></div>
         </div>
       )}
     </>

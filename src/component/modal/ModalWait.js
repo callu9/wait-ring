@@ -15,22 +15,20 @@ export default function ModalWait(props) {
     if (param === "adult" && adult > 0) {
       if (adult <= 1) setButtonFg(false);
       setAdult(adult - 1);
-    }
-    else if (param === "child" && child > 0) setChild(child - 1);
+    } else if (param === "child" && child > 0) setChild(child - 1);
   }
   function plus(param) {
     if (param === "adult") {
-        if (!buttonFg) setButtonFg(true);
-        setAdult(adult + 1);
-    }
-    else if (param === "child") setChild(child + 1);
+      if (!buttonFg) setButtonFg(true);
+      setAdult(adult + 1);
+    } else if (param === "child") setChild(child + 1);
   }
 
   return (
     <>
       {props.modalFlag && (
-        <div className="Modal-Wait-Background">
-          <div className="Modal-Wait">
+        <div className="Modal-Wait">
+          <div className="Modal-Wait-Content">
             <div className="Modal-Cancel">
               <img
                 src={cancel}
@@ -45,12 +43,11 @@ export default function ModalWait(props) {
               입니다.
             </div>
             <div className="Modal-Wait-People">
-              <div>대기 신청하실 인원을 선택하세요</div>
-              <table>
-                <tbody>
-                  <tr className="MyWait-Table-row">
-                    <td className="left">성인</td>
-                    <td className="right">
+              <p>대기 신청하실 인원을 선택하세요</p>
+              <div>
+                  <div className="MyWait-Table-row">
+                    <p className="left">성인</p>
+                    <p className="right">
                       <span className="minus" onClick={() => minus("adult")}>
                         -
                       </span>
@@ -58,11 +55,11 @@ export default function ModalWait(props) {
                       <span className="plus" onClick={() => plus("adult")}>
                         +
                       </span>
-                    </td>
-                  </tr>
-                  <tr className="MyWait-Table-row">
-                    <td className="left">아동</td>
-                    <td className="right">
+                    </p>
+                  </div>
+                  <p className="MyWait-Table-row">
+                    <p className="left">아동</p>
+                    <p className="right">
                       <span className="minus" onClick={() => minus("child")}>
                         -
                       </span>
@@ -70,10 +67,9 @@ export default function ModalWait(props) {
                       <span className="plus" onClick={() => plus("child")}>
                         +
                       </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </p>
+                  </p>
+              </div>
             </div>
             <div
               className={
@@ -83,6 +79,10 @@ export default function ModalWait(props) {
               웨이팅 신청하기
             </div>
           </div>
+          <div
+            className="Modal-Wait-Background"
+            onClick={changeModalFlag}
+          ></div>
         </div>
       )}
     </>

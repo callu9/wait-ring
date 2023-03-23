@@ -3,121 +3,140 @@
 .Etc {
   margin: 25px;
   padding-bottom: 10vh;
-}
 
-.Etc > * {
-  margin-top: 15px;
-}
+  p {
+    margin: 0;
+  }
 
-//
-// 환경설정 아이콘
-//
-.Setting-icon-area {
-  text-align: right;
-  /* margin: 27px 25px 0 25px; */
-}
+  > div {
+    margin-top: 15px;
+  }
 
-.Setting-icon-area img {
-  max-width: 55px;
-  width: 10%;
-}
+  //
+  // 환경설정 아이콘
+  //
+  .Setting {
+    text-align: right;
+    /* margin: 27px 25px 0 25px; */
+    img {
+      max-width: 55px;
+      width: 10%;
+    }
+  }
 
-//
-// 헤더 폰트 설정
-//
-.Header-etc > * {
-  display: inline;
-  font-size: $header-large-font-size;
-  font-weight: 500;
-}
+  //
+  // 헤더 폰트 설정
+  //
+  .Header-etc {
+    p {
+      font-size: $header-large-font-size;
+      font-weight: 500;
+    }
 
-.Header-nickname {
-  display: inline;
-  font-weight: $header-large-font-weight;
-  color: $orangeColor;
-}
+    span.Header-nickname {
+      font-weight: $header-large-font-weight;
+      color: $orangeColor;
+    }
+  }
 
-//
-// 회원 활동 요약
-//
-.Activity-table {
-  margin-top: 35px;
-  margin-bottom: 35px;
-  table-layout: fixed;
-}
+  //
+  // 회원 활동 요약
+  //
+  .Activity-list {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
 
-.Activity-area > * {
-  text-align: center;
-}
+    > div {
+      width: 24vw;
+      text-align: center;
+      border-right: 1px solid $lightGrayColor;
+    }
 
-.Activity-Item-Right {
-  border-right: 1px solid $lightGrayColor;
-  border-top: none;
-  border-bottom: none;
-}
-.Activity-Item-Left {
-  border-top: none;
-  border-bottom: none;
-}
+    > div:last-child {
+      border: 0;
+    }
 
-.Activity-Gray {
-  color: $grayColor;
-  font-size: 9pt;
-}
+    p:first-child {
+      color: $grayColor;
+      font-size: 8px;
+    }
 
-.Activity-LightOrange {
-  color: $lightOrangeColor;
-  font-weight: 700;
-  font-size: 12pt;
-}
-.Activity-Orange {
-  color: $orangeColor;
-  font-weight: 700;
-  font-size: 12pt;
-}
+    p:last-child {
+      font-weight: 700;
+      font-size: 12pt;
+    }
 
-//
-// 메뉴 목록
-//
-.Etc-List-area {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-.Etc-List-Item > td * {
-  display: inline-block;
-  vertical-align: middle;
-}
+    p.Activity-LightOrange {
+      color: $lightOrangeColor;
+    }
 
-.Etc-List-Item img {
-  width: 25px;
-  margin: 5px 25px 5px 0;
-}
+    p.Activity-Orange {
+      color: $orangeColor;
+    }
+  }
 
-//
-// 원격 웨이팅 접수 방법 팝업 버튼
-//
-.How-To-Wait {
-  background-color: $lightOrangeColor;
-  border-radius: 20px;
-}
+  //
+  // 메뉴 목록
+  //
+  .Etc-List-area {
+    margin-top: 25px;
+    margin-bottom: 25px;
 
-.How-To-Wait > * {
-  display: inline-block;
-  color: white;
-  font-size: 15pt;
-  font-weight: $header-large-font-weight;
-}
+    > .Etc-List-Item {
+      display: flex;
+      align-items: center;
+      min-height: 43px;
+      border-bottom: 1px solid $lightGrayColor;
 
-.questionMark {
-  color: $lightOrangeColor;
-  background-color: white;
-  border-radius: 100%;
-  width: 15%;
-  height: 15%;
-  max-width: 30px;
-  max-height: 30px;
-  text-align: center;
-  margin: 15px;
+      > * {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      p {
+        color: $grayColor;
+        font-size: 9px;
+      }
+      
+      img {
+        width: 25px;
+        margin: 9px 15px 9px 0;
+      }
+    }
+
+    > .Etc-List-Item:first-child {
+      border-top: 1px solid $lightGrayColor;
+    }
+  }
+
+  //
+  // 원격 웨이팅 접수 방법 팝업 버튼
+  //
+  .How-To-Wait {
+    background-color: $lightOrangeColor;
+    border-radius: 20px;
+
+    > * {
+      display: inline-block;
+      color: white;
+      font-size: 15pt;
+      font-weight: $header-large-font-weight;
+    }
+  }
+
+  .questionMark {
+    color: $lightOrangeColor;
+    background-color: white;
+    border-radius: 100%;
+    width: 15%;
+    height: 15%;
+    max-width: 30px;
+    max-height: 30px;
+    text-align: center;
+    margin: 15px;
+  }
 }
 
 //
@@ -126,43 +145,49 @@
 .Etc-MyWait-Body-Content {
   margin-top: 15px;
 }
+
+// TODO: div.left, div.right 폰트 정리!!!
 .MyWait-Table-Etc {
+  width: 100%;
   border-top: 1px solid $lightGrayColor;
   border-bottom: 1px solid $lightGrayColor;
-  border-collapse: separate;
-  border-spacing: 0 5px;
-}
 
-.MyWait-Table-row-first > td {
-  padding-top: 15px;
-  border: none;
-}
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .MyWait-Table-row-first {
+    padding-top: 15px;
+  }
+  
+  .MyWait-Table-row-last {
+    padding-bottom: 15px;
+  }
+  
+  .More-Etc {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-.MyWait-Table-row-last > td {
-  padding-bottom: 15px;
-  border: none;
-}
+    > p {
+      margin: 10px 0 5px 0;
+      padding: 3px 0 3px 0;
+      box-shadow: 0 0 3px 2px #cecece;
+      border-radius: 25px;
+      text-align: center;
+      display: inline-block;
+    }
 
-.More-Etc {
-  text-align: center;
-}
-.More-Etc > div {
-  margin: 10px 0 5px 0;
-  padding: 3px 0 3px 0;
-  box-shadow: 0 0 3px 2px #cecece;
-  border-radius: 25px;
-  text-align: center;
-  display: inline-block;
-}
-.One-Button {
-  width: 100%;
-}
-.Two-Buttons {
-  width: 40vw;
-  min-width: 100px;
-}
-.Two-Buttons:first-child {
-  margin-right: 3vw;
+    .One-Button {
+      width: 100%;
+    }
+
+    .Two-Buttons {
+      width: 42vw;
+      min-width: 100px;
+    }
+  }
 }
 
 //

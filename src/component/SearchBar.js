@@ -15,9 +15,7 @@ const SearchBar = (props) => {
     { id: 2, content: "신사동" },
   ];
   const [keyword, setKeyword] = useState(props.keyword);
-  const [keywordFlag, setKeywordFlag] = useState(
-    props.keyword ? true : false
-  );
+  const [keywordFlag, setKeywordFlag] = useState(props.keyword ? true : false);
   const [recentKeyword, setRecentKeyword] = useState(recentList);
 
   const initSearchBar = () => {
@@ -48,23 +46,21 @@ const SearchBar = (props) => {
   };
 
   const recent = recentKeyword.map((r) => (
-    <tr key={r.id} className="Search-Recent-Keyword-Item">
-      <td className="Search-Recent-Keyword">
-        <Link
-          to={"/search/" + r.content}
-          style={{ color: "inherit", textDecoration: "inherit" }}
-        >
-          {r.content}
-        </Link>
-      </td>
-      <td className="Search-Recent-Cancel">
-        <img src={cancel} alt="cancel" onClick={() => cancelKeyword(r.id)} />
-      </td>
-    </tr>
+    <div key={r.id} className="Search-Recent-Keyword-Item">
+      <Link
+        to={"/search/" + r.content}
+        style={{ color: "inherit", textDecoration: "inherit" }}
+      >
+        {r.content}
+      </Link>
+      <img src={cancel} alt="cancel" onClick={() => cancelKeyword(r.id)} />
+    </div>
   ));
 
   return (
-    <div className={props.focusFlag ? "Search-Bar-area-Hidden" : "Search-Bar-area"}>
+    <div
+      className={props.focusFlag ? "Search-Bar-area-Hidden" : "Search-Bar-area"}
+    >
       <div
         className={
           props.focusFlag ? "Search-Area-All-Hidden" : "Search-Area-All"
@@ -111,9 +107,7 @@ const SearchBar = (props) => {
 
       {props.focusFlag && (
         <div className="Search-Area-Recent-Keyword-Hidden">
-          <table className="Search-Recent-Keyword-Area">
-            <tbody>{recent}</tbody>
-          </table>
+          <div className="Search-Recent-Keyword-Area">{recent}</div>
         </div>
       )}
     </div>

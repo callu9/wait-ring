@@ -39,7 +39,6 @@ class App extends Component {
           <Route path="/alarm" element={<Alarm />} />
           <Route path="/store/*" element={<Store />} />
           <Route path="/search/:keyword" element={<SearchResult />} />
-          <Route path="/cal" element={<Calendar />} />
         </Routes>
         <MenuBar />
       </Router>

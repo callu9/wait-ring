@@ -10,18 +10,25 @@
 //
 .Search-Recent-Keyword-Area {
   margin: 25px 0 25px 0;
-}
 
-.Search-Recent-Keyword-Ite {
-  vertical-align: middle;
-}
+  .Search-Recent-Keyword-Item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $lightGrayColor;
+    
+    > * {
+      margin: 9px 0;
+    }
+    
+    img {
+      width: 10px;
+    }
+  }
 
-.Search-Recent-Cancel {
-  text-align: right;
-}
-.Search-Recent-Cancel > img {
-  width: 10px;
-  margin: 10px 0 10px 0;
+  .Search-Recent-Keyword-Item:first-child {
+    border-top: 1px solid $lightGrayColor;
+  }
 }
 
 //
@@ -30,12 +37,22 @@
 .SmallHeader {
   font-weight: $header-large-font-weight;
   font-size: 12pt;
-  margin: 32px 0 10px 0;
+  margin-top: 24px;
 }
 
-.Best-List-Item > * {
-  display: inline-block;
-  margin: 15px;
+.Best-List-Item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 1px solid $lightGrayColor;
+
+  p {
+    margin: 9px;
+  }
+}
+
+.Best-List-Item:first-child {
+  border-top: 1px solid $lightGrayColor;
 }
 
 .firstNum {

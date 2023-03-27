@@ -28,23 +28,20 @@ function Etc(props) {
         <img src={settingIcon} alt="Setting-icon" />
         {/* </Link> */}
       </div>
-      <div className="Header-etc">
-        {user ? (
-          <div>
-            <p>
-              <span className="Header-nickname">{user.nickname}</span>
-              님,
-            </p>
-            <p>환영합니다.</p>
-          </div>
-        ) : (
-          <div>
-            로그인이
-            <br />
-            필요합니다.
-          </div>
-        )}
-      </div>
+      {user ? (
+        <div className="Header-etc">
+          <p>
+            <span className="Header-nickname">{user.nickname}</span>
+            님,
+          </p>
+          <p>환영합니다.</p>
+        </div>
+      ) : (
+        <div className="Header-etc">
+          <p>로그인이</p>
+          <p>필요합니다.</p>
+        </div>
+      )}
       {user ? (
         <div className="Activity-list">
           <div className="Activity-Item-Right">

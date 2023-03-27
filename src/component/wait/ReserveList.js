@@ -5,55 +5,37 @@ export default function ReserveList({ data = {} }) {
   const navigate = useNavigate();
 
   return (
-    <table className="MyWait-Table-Etc">
-      <tbody>
-        <tr className="MyWait-Table-row-first">
-          <td className="left">매장명</td>
-          <td
-            className="right"
-            onClick={() => navigate("/store/" + data.storeId)}
-          >
-            {data.storeName}
-          </td>
-        </tr>
-        <tr className="MyWait-Table-row">
-          <td className="left">인원</td>
-          <td className="right">
-            성인 {data.adult}명
-            {data.child > 0 ? " / 아동 " + data.child + "명" : ""}
-          </td>
-        </tr>
-        <tr className="MyWait-Table-row">
-          <td className="left">예약일시</td>
-          <td className="right">
-            <span className={data.status === 1 ? "right-orange" : "right"}>
-              {data.reserveDate}
-            </span>
-          </td>
-        </tr>
-        <tr className="MyWait-Table-row-last">
-          {data.status === 2 ? (
-            <td className="More-Etc" colSpan="2">
-              <div
-                className="Two-Buttons"
-                onClick={() => navigate("/store/" + data.storeId)}
-              >
-                매장 상세
-              </div>
-              <div className="Two-Buttons">리뷰 쓰기</div>
-            </td>
-          ) : (
-            <td className="More-Etc" colSpan="2">
-              <div
-                className="One-Button"
-                onClick={() => navigate("/store/" + data.storeId)}
-              >
-                매장 상세
-              </div>
-            </td>
-          )}
-        </tr>
-      </tbody>
-    </table>
+    <div className="MyWait-Table-Etc">
+      <div className="MyWait-Table-row-first">
+        <p className="left">매장명</p>
+        <p className="right" onClick={() => navigate("/store/" + data.storeId)}>
+          {data.storeName}
+        </p>
+      </div>
+      <div className="MyWait-Table-row">
+        <p className="left">인원</p>
+        <p className="right">
+          성인 {data.adult}명
+          {data.child > 0 ? " / 아동 " + data.child + "명" : ""}
+        </p>
+      </div>
+      <div className="MyWait-Table-row">
+        <p className="left">예약일시</p>
+        <p className={data.status === 1 ? "right orange" : "right"}>
+          {data.reserveDate}
+        </p>
+      </div>
+      {data.status === 2 ? (
+        <div className="More-Etc">
+          <p onClick={() => navigate("/store/" + data.storeId)}>매장 상세</p>
+          <p>리뷰 쓰기</p>
+        </div>
+      ) : (
+        <div className="More-Etc">
+          <p onClick={() => navigate("/store/" + data.storeId)}>매장 상세</p>
+          <p className="Btn-Cancel-Reserve">예약 취소</p>
+        </div>
+      )}
+    </div>
   );
 }

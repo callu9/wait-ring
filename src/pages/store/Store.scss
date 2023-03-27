@@ -44,6 +44,7 @@
 
 .Store-location,
 .Store-reviews {
+  margin-top: 5px;
   font-size: $header-small-font-size;
   color: $grayColor;
 }
@@ -81,12 +82,20 @@ strong {
 //
 // 매장 정보
 //
-.Store-Detail-Area td {
-  padding-bottom: 5px;
-}
+.Store-Detail-Area {
+  table {
+    width: 100%;
+  }
 
-.Store-Detail-Area td {
-  border: none;
+  td {
+    font-size: $header-small-font-size;
+    font-weight: $header-small-font-weight;
+    padding: 5px 0;
+  }
+
+  td:last-child {
+    color: #4A4A4A;
+  }
 }
 
 .Store-Detail-Image {
@@ -129,50 +138,62 @@ strong {
 //
 // 대표 메뉴
 //
-.Store-Menu-Item > div {
-  display: inline-block;
-  vertical-align: middle;
-}
+.Store-Menu-List {
+  > div:first-child {
+    border-top: 1px solid $lightGrayColor;
+  }
 
-.Store-Menu-Image > div {
-  width: 20vw;
-  height: 20vw;
-  margin: 2vw 2vw 2vw 0;
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-.MenuImage {
-  border-radius: 15px;
-  display: inline-block; /* Otherwise it keeps some space around baseline */
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(50, 50);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: auto;
-}
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $lightGrayColor;
+    padding: 15px 0;
+  }
 
-.Store-Menu-Text {
-  width: calc(76vw - 60px);
-  margin: 2vw 0 2vw 1vw;
-  white-space: normal;
-}
+  p {
+    margin: 0;
+  }
 
-.Store-Menu-Name,
-.Store-Menu-Price {
-  font-weight: 500;
-}
+  .Store-Menu-Image {
+    width: 20vw;
+    height: 20vw;
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
 
-.Store-Menu-Price {
-  color: $orangeColor;
-}
+  .MenuImage {
+    border-radius: 15px;
+    display: inline-block; /* Otherwise it keeps some space around baseline */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50, 50);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+  }
 
-.Store-Menu-Detail {
-  color: $grayColor;
-  font-size: $header-small-font-size;
+  .Store-Menu-Text {
+    width: calc(76vw - 60px);
+    white-space: normal;
+  }
+
+  .Store-Menu-Name,
+  .Store-Menu-Price {
+    font-weight: 500;
+  }
+
+  .Store-Menu-Price {
+    color: $orangeColor;
+  }
+
+  .Store-Menu-Detail {
+    color: $grayColor;
+    font-size: $header-small-font-size;
+  }
 }
 
 //
@@ -191,29 +212,34 @@ strong {
   font-weight: $header-large-font-weight;
 }
 
-.Store-Review-Item {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+.Store-Review-List {
+  p {
+    margin: 0;
+  }
 
-.Store-Review-Item > div {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+  > div:first-child {
+    border-top: 1px solid $lightGrayColor;
+  }
 
-.Store-Review-Star > * {
-  display: inline-block;
-  margin-right: 8px;
-}
+  > div {
+    padding: 15px 0;
+    border-bottom: 1px solid $lightGrayColor;
+  }
 
-.Store-Review-Etc {
-  color: $grayColor;
-  font-size: 10pt;
-}
+  .Store-Review-Star > * {
+    display: inline-block;
+    margin-right: 8px;
+  }
 
+  .Store-Review-Etc {
+    color: $grayColor;
+    font-size: 10pt;
+    margin: 5px 0;
+  }
+}
 
 //
-// 하단 탭 
+// 하단 탭
 //
 
 .Store-Tab {
@@ -243,7 +269,8 @@ strong {
   border-radius: 15px;
 }
 
-.Store-Tab-Wait, .Store-Tab-Wait-None {
+.Store-Tab-Wait,
+.Store-Tab-Wait-None {
   margin-right: 4vw;
 }
 .Store-Tab-Wait {
@@ -252,6 +279,7 @@ strong {
 .Store-Tab-Reserve {
   background-color: $lightOrangeColor;
 }
-.Store-Tab-Wait-None, .Store-Tab-Reserve-None {
+.Store-Tab-Wait-None,
+.Store-Tab-Reserve-None {
   background-color: $lightGrayColor;
 }

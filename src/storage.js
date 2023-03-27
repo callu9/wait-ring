@@ -610,7 +610,7 @@ const storage = {
       waitingBefore: 3,
       adult: 2,
       child: 1,
-      status: 0,
+      status: 1,
     },
     {
       id: 2,
@@ -619,7 +619,8 @@ const storage = {
       waitingNum: 8,
       adult: 2,
       child: 1,
-      status: 1,
+      status: 2,
+      enteredTime: "2022.00.00(월) 00:00"
     },
     {
       id: 3,
@@ -628,7 +629,8 @@ const storage = {
       waitingNum: 15,
       adult: 4,
       child: 0,
-      status: 1,
+      status: 2,
+      enteredTime: "2022.00.00(월) 00:00"
     },
   ],
   EtcReservationDetail: [

@@ -30,7 +30,7 @@
   .Header-etc {
     p {
       font-size: $header-large-font-size;
-      font-weight: 500;
+      font-weight: $header-small-font-weight;
     }
 
     span.Header-nickname {
@@ -99,7 +99,7 @@
         color: $grayColor;
         font-size: 9px;
       }
-      
+
       img {
         width: 25px;
         margin: 9px 15px 9px 0;
@@ -144,48 +144,60 @@
 //
 .Etc-MyWait-Body-Content {
   margin-top: 15px;
-}
-
-// TODO: div.left, div.right 폰트 정리!!!
-.MyWait-Table-Etc {
-  width: 100%;
-  border-top: 1px solid $lightGrayColor;
-  border-bottom: 1px solid $lightGrayColor;
-
-  > div {
-    display: flex;
-    justify-content: space-between;
-  }
   
-  .MyWait-Table-row-first {
-    padding-top: 15px;
-  }
-  
-  .MyWait-Table-row-last {
-    padding-bottom: 15px;
-  }
-  
-  .More-Etc {
+  .MyWait-Table-Etc {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    > p {
-      margin: 10px 0 5px 0;
-      padding: 3px 0 3px 0;
-      box-shadow: 0 0 3px 2px #cecece;
-      border-radius: 25px;
-      text-align: center;
-      display: inline-block;
+    border-top: 1px solid $lightGrayColor;
+    border-bottom: 1px solid $lightGrayColor;
+  
+    > div {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
     }
 
-    .One-Button {
+    .left {
+      font-weight: $header-small-font-weight;
+      color: $grayColor;
+    }
+
+    .right {
+      font-weight: 500;
+    }
+  
+    .MyWait-Table-row-first {
+      padding-top: 15px;
+    }
+  
+    .MyWait-Table-row-last {
+      padding-bottom: 15px;
+    }
+  
+    .More-Etc {
       width: 100%;
-    }
+      display: flex;
+      justify-content: space-between;
+  
+      > p {
+        width: 42vw;
+        min-width: 100px;
+        margin: 15px 0;
+        padding: 3px 0 3px 0;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        text-align: center;
+        display: inline-block;
+      }
 
-    .Two-Buttons {
-      width: 42vw;
-      min-width: 100px;
+      .Btn-Cancel-Wait {
+        color: white;
+        background: $orangeColor;
+      }
+
+      .Btn-Cancel-Reserve {
+        color: white;
+        background: $lightOrangeColor;
+      }
     }
   }
 }
@@ -197,22 +209,50 @@
   margin: 25px;
   margin-top: 0;
   padding-bottom: 10vh;
-}
+  
+  p {
+    margin: 0;
+  }
+  
+  .Store-Review-Item:first-child {
+    border-top: 1px solid $lightGrayColor;
+  }
+  
+  .Store-Review-Item {
+    border-bottom: 1px solid $lightGrayColor;
+    padding: 10px 0 15px 0;
 
-.Store-Review-Name {
-  font-size: 12pt;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    .Store-Review-Name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-.Store-Review-Image {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-.Store-Review-Image > img {
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 0px 5px 3px #cecece;
+      > p {
+        font-size: 12pt;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      > img {
+        height: 10px;
+        transform: rotate(180deg);
+      }
+    }
+
+    .Store-Review-Etc {
+      margin-bottom: 5px;
+    }
+
+    .Store-Review-Image {
+      margin-top: 10px;
+    }
+
+    .Store-Review-Image > img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 0px 5px 3px #cecece;
+    }
+  }
 }

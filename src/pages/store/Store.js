@@ -55,7 +55,10 @@ function Store(props) {
         <div className="Store-Header-Detail">
           <div className="Store-Header-Detail-Left">
             <div className="Store-name">{storeDetail.name}</div>
-            <div className="Store-location" onClick={() => copyText(storeDetail.areaDetail)}>
+            <div
+              className="Store-location"
+              onClick={() => copyText(storeDetail.areaDetail)}
+            >
               {storeDetail.areaDetail} ({storeDetail.areaDong})
             </div>
             {alertFg && <Alert className="alert" />}
@@ -95,7 +98,10 @@ function Store(props) {
         <div className="Store-Detail-Image">
           {storeDetail.images.map((image, i) => (
             <div key={i} className="ListItem-Slide">
-              <div className="ListItem-image-area" onClick={() => changeModalFlag(image)}>
+              <div
+                className="ListItem-image-area"
+                onClick={() => changeModalFlag(image)}
+              >
                 <img src={image} alt="store-detail" />
               </div>
             </div>
@@ -104,18 +110,14 @@ function Store(props) {
       </div>
       <div className="Store-Menu-Area">
         <div className="Header">대표 메뉴</div>
-        <table>
-          <Menus menus={storeDetail.menus} />
-        </table>
+        <Menus menus={storeDetail.menus} />
         <div className="More">
           <div>메뉴 더보기 ＞</div>
         </div>
       </div>
       <div className="Store-Review-Area">
         <div className="Header">리뷰</div>
-        <table>
-          <Reviews reviews={storeDetail.reviews} />
-        </table>
+        <Reviews reviews={storeDetail.reviews} />
         <div className="More">
           <div>리뷰 더보기 ＞</div>
         </div>

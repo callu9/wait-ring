@@ -35,20 +35,17 @@
 
 .ListItem-image-area-100 {
   @extend .ListItem-image-area;
-  max-width: 150px;
-  min-width: 100px;
-  max-height: 150px;
-  min-height: 100px;
-  width: 20vw;
-  height: 20vw;
+  width: 25vw;
+  aspect-ratio: 1 / 1;
 }
 
 .ListItem-image-area-112 {
   @extend .ListItem-image-area;
-  max-width: 300px;
-  min-width: 112px;
   width: 40vw;
-  height: 100px;
+  aspect-ratio: 5 / 3;
+  @media (orientation: landscape) {
+    width: 30vw;
+  }
 }
 
 .ListItem-image-1x1 {

@@ -3,6 +3,7 @@
 .Modal-Photo-Background,
 .Modal-Wait-Background,
 .Modal-Reserve-Background {
+  z-index: 3;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -26,7 +27,7 @@
 //
 
 .Modal-Photo {
-  z-index: 3;
+  z-index: 4;
   top: 50%;
   left: 50%;
   width: 90%;
@@ -118,7 +119,7 @@
 // ModalReserve
 //
 .Modal-Reserve {
-  z-index: 2;
+  z-index: 3;
 
   .Modal-Reserve-Content {
     @extend .Modal-Photo;
